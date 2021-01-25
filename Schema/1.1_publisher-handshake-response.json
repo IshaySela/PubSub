@@ -1,0 +1,16 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema",
+    "title": "The handshake response from the server, for publisher client.",
+    "description": "The response from the server, after the publisher sends the handshake.",
+    "$id": "1.1",
+    "properties": {
+        "status": {
+            "description": "Request status. Indicates success, failure or other status.",
+            "type":"number"
+        }, 
+        "id": {
+            "description": "The id of the publisher. a client will subscribe to this id.",
+            "type":"string"
+        }
+    }
+}

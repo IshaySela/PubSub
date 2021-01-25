@@ -1,0 +1,12 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema",
+    "title": "The response header for publish data request.",
+    "description": "Send back to the publisher the status of publishing the data.",
+    "properties": {
+        "Status": {
+            "type":"number",
+            "description": "The operation status (failed, success and more)."
+        }
+    },
+    "required": ["Status"]
+}

@@ -1,0 +1,6 @@
+{
+    "$schema": "./0_handshake.json",
+    "ClientType": 0,
+    "Encrypt": true,
+    "EncryptionString": "2fPFdyBWZrZ9A7G2bX6nksXNZ1DGwCqF"
+}
