@@ -3,14 +3,16 @@
 #include "headers/Util/Random.hpp"
 #include "headers/Protocol/PublishDataRequest.hpp"
 #include "headers/Protocol/PublishDataResponse.hpp"
+#include "headers/OpenSslErrors.hpp"
+#include <sys/socket.h>
 #include <iostream>
-#include <string>
+#include <sstream>
 
 using PubSub::Util::BioUtil;
 
 namespace PubSub
 {
-    Publisher::Publisher(std::string id, ClientBIO socket) : id(id), client(std::move(socket))
+    Publisher::Publisher(std::string id, ClientBIO socket, TlsSocketServer &server) : id(id), client(std::move(socket)), server(server)
     {
     }
 
@@ -23,43 +25,51 @@ namespace PubSub
 
     void Publisher::start()
     {
-        this->workerFtr = std::async(&Publisher::worker, this).share();
+        //this->workerFtr = std::async(&Publisher::worker, this).share();
+        auto& server = this->server;
+        this->workerFtr = std::async([this, &server]() {
+            try
+            {
+                this->worker();
+            }
+            catch (const std::exception &e)
+            {
+                std::cerr << e.what() << '\n';
+                //close(BIO_get_fd(this->client.get(), nullptr));
+                server.removePublisher(this->getId());
+            }
+        }).share();
     }
-
+    std::string Publisher::getId() const { return this->id; }
     void Publisher::worker()
     {
-
-        try
+        while (true)
         {
-            while (true)
+            std::string payload;
+            auto headers = BioUtil::readHeaders(this->client, payload);
+
+            auto request = Protocol::PublishDataRequest(headers);
+            int length = request.getPayloadLength() - payload.length();
+            if (length > 0)
             {
-                std::string payload;
-                auto headers = BioUtil::readHeaders(this->client, payload);
-                
-                auto request = Protocol::PublishDataRequest(headers);
-                int length = request.getPayloadLength() - payload.length();
-                if (length > 0)
-                {
-                    payload += BioUtil::readBytes(this->client, length).data();
-                }
-
-                for (auto& sub : this->subscribers)
-                {
-                    auto sock = sub.second->getSocket();
-                    BIO_write(sock, payload.data(), payload.size());
-                }
-
-                auto response = Protocol::PublishDataResponse(Protocol::ResponseStatus::Success).toJson().dump();
-
-                BIO_write(this->client.get(), response.c_str(), response.length());
+                payload += BioUtil::readBytes(this->client, length).data();
             }
+
+            for (auto &sub : this->subscribers)
+            {
+                auto sock = sub.second->getSocket();
+                auto sent = BIO_write(sock, payload.data(), payload.size());
+
+                // The client is dead, remove it from the clients list.
+                if (!BioUtil::socketConnected(sock))
+                    this->subscribers.erase(sub.first);
+            }
+
+            auto response = Protocol::PublishDataResponse(Protocol::ResponseStatus::Success).toJson().dump();
+
+            BIO_write(this->client.get(), response.c_str(), response.length());
         }
-        catch (const std::exception &e)
-        {
-            std::cerr << e.what() << '\n';
-            close(BIO_get_fd(this->client.get(), nullptr));
-        }
-        
+
         //auto payload = BioUtil::readBytes(this->client, request.getPayloadLength());
     }
 

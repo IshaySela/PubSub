@@ -94,10 +94,10 @@ namespace PubSub
         BIO_write(client.get(), response.c_str(), response.length());
         BIO_write(client.get(), "\r\n\r\n", 4);
 
-        std::unique_ptr<Publisher> publisher(new Publisher(publisherId, std::move(client)));
+        std::unique_ptr<Publisher> publisher(new Publisher(publisherId, std::move(client), *this));
 
         publisher->start();
-
+        
         this->publishers[publisherId] = std::move(publisher);
     }
 
@@ -121,6 +121,12 @@ namespace PubSub
             std::unique_ptr<Subscriber> sub(new Subscriber(std::move(socket)));
             publisher->second->addNew(std::move(sub), id);
         }
+    }
+
+    void TlsSocketServer::removePublisher(std::string publisherId)
+    {
+        std::lock_guard<std::mutex> lock(this->publishersRemoveLock);
+        this->publishers.erase(publisherId);
     }
 
 } // namespace PubSub
