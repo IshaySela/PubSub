@@ -14,6 +14,7 @@ namespace PubSub
 {
     Publisher::Publisher(std::string id, ClientBIO socket, TlsSocketServer &server) : id(id), client(std::move(socket)), server(server)
     {
+        this->workerDone = false;
     }
 
     Publisher::~Publisher() {}
@@ -25,22 +26,25 @@ namespace PubSub
 
     void Publisher::start()
     {
-        //this->workerFtr = std::async(&Publisher::worker, this).share();
-        auto& server = this->server;
-        this->workerFtr = std::async([this, &server]() {
-            try
-            {
-                this->worker();
-            }
-            catch (const std::exception &e)
-            {
-                std::cerr << e.what() << '\n';
-                //close(BIO_get_fd(this->client.get(), nullptr));
-                server.removePublisher(this->getId());
-            }
-        }).share();
+        this->workerFtr = std::async(&Publisher::workerWrapper, this).share();
     }
+
     std::string Publisher::getId() const { return this->id; }
+    bool Publisher::isWorkerDone() const { return this->workerDone.load(); }
+
+    void Publisher::workerWrapper()
+    {
+        try
+        {
+            this->worker();
+        }
+        catch (const std::exception &e)
+        {
+            std::cerr << e.what() << '\n';
+            //close(BIO_get_fd(this->client.get(), nullptr));
+            this->server.removePublisher(this->id);
+        }
+    }
     void Publisher::worker()
     {
         while (true)

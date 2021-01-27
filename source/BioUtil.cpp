@@ -65,7 +65,7 @@ namespace PubSub
             int error_code;
             socklen_t error_code_size = sizeof(error_code);
             getsockopt(BIO_get_fd(bio, nullptr), SOL_SOCKET, SO_ERROR, &error_code, &error_code_size);
-            // Check for broken pip
+            // Check for broken pipe
             return error_code != EPIPE; 
         }
 

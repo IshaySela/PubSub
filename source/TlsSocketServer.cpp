@@ -37,6 +37,9 @@ namespace PubSub
         if (BIO_do_accept(this->clientsFactory.get()) <= 0)
             printErrorsAndThrow("An error occoured while executing BIO_do_accept.");
 
+        // Launch the thread responsible for deleting unsused publishers.
+        auto cleanerThread = std::async(std::launch::async, &TlsSocketServer::publishersCleaner, this);
+
         while (auto client = this->acceptNewTcpConnection())
         {
             try
@@ -69,23 +72,6 @@ namespace PubSub
         return ClientBIO(BIO_pop(this->clientsFactory.get()));
     }
 
-    std::string TlsSocketServer::getHeaders(ClientBIO &socket)
-    {
-        std::string headers = "", last = "";
-
-        do
-        {
-
-            if (headers.length() > MAX_HEADER_LENGTH)
-                throw std::runtime_error("Max headers length execeeded.");
-
-            headers = Util::BioUtil::readSomeData(socket);
-            last = headers.substr(headers.size() - 4); // Get the last 4 characters. when done, those characters should be \r\n\r\n.
-        } while (last != "\r\n\r\n");
-
-        return headers;
-    }
-
     void TlsSocketServer::handlePublisher(ClientBIO &client)
     {
         std::string publisherId = Util::randomString(32);
@@ -97,7 +83,7 @@ namespace PubSub
         std::unique_ptr<Publisher> publisher(new Publisher(publisherId, std::move(client), *this));
 
         publisher->start();
-        
+
         this->publishers[publisherId] = std::move(publisher);
     }
 
@@ -109,8 +95,7 @@ namespace PubSub
 
         if (publisher == this->publishers.end())
         {
-            int fd = BIO_get_fd(socket.get(), nullptr);
-            close(fd);
+            close(BIO_get_fd(socket.get(), nullptr));
         }
         else
         {
@@ -125,8 +110,26 @@ namespace PubSub
 
     void TlsSocketServer::removePublisher(std::string publisherId)
     {
-        std::lock_guard<std::mutex> lock(this->publishersRemoveLock);
-        this->publishers.erase(publisherId);
+        std::lock_guard<std::mutex> lock(this->disconnectedPublishsersLock);
+        this->disconnectedPublishsers.push_back(publisherId);
+    }
+
+    void TlsSocketServer::publishersCleaner()
+    {
+        while (true)
+        {
+            std::this_thread::sleep_for(std::chrono::seconds(10));
+            std::cout << __FILE__ << ":" << __LINE__ << "\t" << "Deleteting " << this->disconnectedPublishsers.size() << " from the publishers list." << std::endl;
+            
+            std::lock_guard<std::mutex> lock(this->disconnectedPublishsersLock);
+
+            for (auto publisherId : this->disconnectedPublishsers)
+            {
+                this->publishers.erase(publisherId);
+            }
+
+            this->disconnectedPublishsers.clear();
+        }
     }
 
 } // namespace PubSub
