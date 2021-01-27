@@ -25,10 +25,8 @@ namespace PubSub
             nlohmann::json json;
             std::string id;
             std::string authSecret;
-
+            
             void getValuesFromJson();
         };
-        
-        
     }
 } // namespace PubSub

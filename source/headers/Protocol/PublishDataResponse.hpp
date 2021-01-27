@@ -5,6 +5,9 @@ namespace PubSub
 {
     namespace Protocol
     {
+        /**
+         * @brief The response for publish data request. Based on Schema/3_publish-data-response.json.
+        */
         class PublishDataResponse : public Util::ISerializable
         {
         public:

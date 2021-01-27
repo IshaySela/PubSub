@@ -7,6 +7,9 @@ namespace PubSub
 {
     namespace Protocol
     {
+        /**
+         * @brief The handshake response for a subscriber. Based on /Schema/1.2_subscriber-handshake-response.json
+        */
         class SubscriberHandshakeResponse : public Util::ISerializable
         {
         public:

@@ -6,6 +6,9 @@ using PubSub::Util::ClientBIO;
 
 namespace PubSub
 {
+    /**
+     * @brief Contains the BIO of a subscriber and other metadata about the subscriber.
+    */
     class Subscriber
     {
     public:
@@ -14,7 +17,7 @@ namespace PubSub
 
         BIO* getSocket() const;
     private:
-        ClientBIO socket;
+        ClientBIO socket; ///< The BIO of the client.
     };
 } // namespace PubSub
 

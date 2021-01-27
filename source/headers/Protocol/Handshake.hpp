@@ -46,7 +46,7 @@ namespace PubSub
             static Handshake createAndThrow(const char *json);
 
         private:
-            Json json;
+            Json json; ///< The raw json object of the class.
             bool shouldEncrypt;
             ClientType clientType;
             std::string authenticationSecret;
