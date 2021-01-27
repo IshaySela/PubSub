@@ -17,7 +17,7 @@ namespace PubSub
     {
         /**
         * @brief The handshake class wrapps the json object recived from the client, and creates simple ways to access the headers information.
-        * Implmenets /Schema/0_handshake.json
+        * <a href="0_handshake.json" target="_blank">implements /Schema/0_handshake.json</a>
         */
         class Handshake
         {

@@ -14,8 +14,7 @@ namespace PubSub
     {
         /**
         * @brief The request headers for publishing data to the clients.
-        * Implementes /Schema/2_publish-data.json.
-        * Note that the forwarding option is not implemented yet.
+        * <a href="2_publish-data.json" target="_blank">implements /Schema/2_publish-data.json</a>
         */
         class PublishDataRequest : public Util::ISerializable
         {

@@ -1,0 +1,29 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema",
+    "$id": "0",
+    "title": "The Pub/Sub handshake json schema.",
+    "description": "The handshake header contains metadata about the client, and some optinal information for the server.",
+    "properties": {
+        "ClientType": {
+            "type": "number",
+            "description": "The type of the client. can be 1 or 0, as defined in file headers/Protocol/ClientType.hpp"
+        },
+        "AuthSecret":{
+            "type": "string",
+            "description": "The authentication secret a Subsciber should send when connecting to the Publisher."
+        },
+        "Encrypt":{
+            "type": "boolean",
+            "description": "Indicate if the messages should be encrypted or not. if set to true, EncryptionString is required."
+        },
+        "EncryptionString": {
+            "type": "string",
+            "description": "A string of characters, that the encryption will be created from (using SHA3 or simillar algorithm)."
+        },
+        "Id": {
+            "type":"string",
+            "description": "If the client is a subscriber, this field is the endpoint id."
+        }
+    },
+    "required": ["ClientType"]
+}
