@@ -1,0 +1,74 @@
+\hypertarget{class_pub_sub_1_1_tls_socket_server}{}\doxysection{Pub\+Sub\+::Tls\+Socket\+Server Class Reference}
+\label{class_pub_sub_1_1_tls_socket_server}\index{PubSub::TlsSocketServer@{PubSub::TlsSocketServer}}
+
+
+Listen to incoming connections and sorts the clients to publishers and subscriber, according to the handshake the client sends.  
+
+
+
+
+{\ttfamily \#include $<$Tls\+Socket\+Server.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_pub_sub_1_1_tls_socket_server_afcddc589446933cd75a0f5fa98a610f7}{Tls\+Socket\+Server}} (int port)
+\item 
+\mbox{\hyperlink{class_pub_sub_1_1_tls_socket_server_a5237875d6c6320ca998eec9cbc9c3de0}{$\sim$\+Tls\+Socket\+Server}} ()
+\item 
+void \mbox{\hyperlink{class_pub_sub_1_1_tls_socket_server_ac7c2818e210a7054c25357e5ff32e672}{accept\+Clients}} ()
+\begin{DoxyCompactList}\small\item\em Accepts clients, recive the handshake and handling the client accordingly. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_pub_sub_1_1_tls_socket_server_a43e81a234bb29d68312c1cab12bedde6}{remove\+Publisher}} (std\+::string id)
+\begin{DoxyCompactList}\small\item\em Add the string given to the disconnected\+Publishsers list. Note this function does not actually remove the publisher from the publishers map, but signals the cleaner thread to remove the publisher. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Listen to incoming connections and sorts the clients to publishers and subscriber, according to the handshake the client sends. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_pub_sub_1_1_tls_socket_server_afcddc589446933cd75a0f5fa98a610f7}\label{class_pub_sub_1_1_tls_socket_server_afcddc589446933cd75a0f5fa98a610f7}} 
+\index{PubSub::TlsSocketServer@{PubSub::TlsSocketServer}!TlsSocketServer@{TlsSocketServer}}
+\index{TlsSocketServer@{TlsSocketServer}!PubSub::TlsSocketServer@{PubSub::TlsSocketServer}}
+\doxysubsubsection{\texorpdfstring{TlsSocketServer()}{TlsSocketServer()}}
+{\footnotesize\ttfamily Pub\+Sub\+::\+Tls\+Socket\+Server\+::\+Tls\+Socket\+Server (\begin{DoxyParamCaption}\item[{int}]{port }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_pub_sub_1_1_tls_socket_server_a5237875d6c6320ca998eec9cbc9c3de0}\label{class_pub_sub_1_1_tls_socket_server_a5237875d6c6320ca998eec9cbc9c3de0}} 
+\index{PubSub::TlsSocketServer@{PubSub::TlsSocketServer}!````~TlsSocketServer@{$\sim$TlsSocketServer}}
+\index{````~TlsSocketServer@{$\sim$TlsSocketServer}!PubSub::TlsSocketServer@{PubSub::TlsSocketServer}}
+\doxysubsubsection{\texorpdfstring{$\sim$TlsSocketServer()}{~TlsSocketServer()}}
+{\footnotesize\ttfamily Pub\+Sub\+::\+Tls\+Socket\+Server\+::$\sim$\+Tls\+Socket\+Server (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_pub_sub_1_1_tls_socket_server_ac7c2818e210a7054c25357e5ff32e672}\label{class_pub_sub_1_1_tls_socket_server_ac7c2818e210a7054c25357e5ff32e672}} 
+\index{PubSub::TlsSocketServer@{PubSub::TlsSocketServer}!acceptClients@{acceptClients}}
+\index{acceptClients@{acceptClients}!PubSub::TlsSocketServer@{PubSub::TlsSocketServer}}
+\doxysubsubsection{\texorpdfstring{acceptClients()}{acceptClients()}}
+{\footnotesize\ttfamily void Pub\+Sub\+::\+Tls\+Socket\+Server\+::accept\+Clients (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Accepts clients, recive the handshake and handling the client accordingly. 
+
+\mbox{\Hypertarget{class_pub_sub_1_1_tls_socket_server_a43e81a234bb29d68312c1cab12bedde6}\label{class_pub_sub_1_1_tls_socket_server_a43e81a234bb29d68312c1cab12bedde6}} 
+\index{PubSub::TlsSocketServer@{PubSub::TlsSocketServer}!removePublisher@{removePublisher}}
+\index{removePublisher@{removePublisher}!PubSub::TlsSocketServer@{PubSub::TlsSocketServer}}
+\doxysubsubsection{\texorpdfstring{removePublisher()}{removePublisher()}}
+{\footnotesize\ttfamily void Pub\+Sub\+::\+Tls\+Socket\+Server\+::remove\+Publisher (\begin{DoxyParamCaption}\item[{std\+::string}]{id }\end{DoxyParamCaption})}
+
+
+
+Add the string given to the disconnected\+Publishsers list. Note this function does not actually remove the publisher from the publishers map, but signals the cleaner thread to remove the publisher. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The id of the publisher to remove. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/headers/\mbox{\hyperlink{_tls_socket_server_8hpp}{Tls\+Socket\+Server.\+hpp}}\item 
+source/\mbox{\hyperlink{_tls_socket_server_8cpp}{Tls\+Socket\+Server.\+cpp}}\end{DoxyCompactItemize}

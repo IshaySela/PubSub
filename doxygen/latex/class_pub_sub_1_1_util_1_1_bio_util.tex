@@ -1,0 +1,169 @@
+\hypertarget{class_pub_sub_1_1_util_1_1_bio_util}{}\doxysection{Pub\+Sub\+::Util\+::Bio\+Util Class Reference}
+\label{class_pub_sub_1_1_util_1_1_bio_util}\index{PubSub::Util::BioUtil@{PubSub::Util::BioUtil}}
+
+
+{\ttfamily \#include $<$Bio\+Util.\+hpp$>$}
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{class_pub_sub_1_1_util_1_1_bio_util_a9f2e6dc7f378474d3d1f5759cbd7973e}{read\+Some\+Data}} (\mbox{\hyperlink{namespace_pub_sub_a30acb418a473446afbfee61b608659b9}{Unique\+Ptr}}$<$ B\+IO $>$ \&bio)
+\begin{DoxyCompactList}\small\item\em read 1024 bytes of data and return them. \end{DoxyCompactList}\item 
+{\footnotesize template$<$std\+::size\+\_\+t amount$>$ }\\static std\+::string \mbox{\hyperlink{class_pub_sub_1_1_util_1_1_bio_util_a3f6c000868f2f22f6710c9d3b305462e}{read\+Bytes}} (\mbox{\hyperlink{namespace_pub_sub_a30acb418a473446afbfee61b608659b9}{Unique\+Ptr}}$<$ B\+IO $>$ \&bio)
+\begin{DoxyCompactList}\small\item\em Read X amount of bytes from the bio and return them as string. \end{DoxyCompactList}\item 
+{\footnotesize template$<$std\+::size\+\_\+t amount$>$ }\\static std\+::vector$<$ char $>$ \mbox{\hyperlink{class_pub_sub_1_1_util_1_1_bio_util_a9cb6e3e1a991f1ae83710143958c955b}{read\+Bytes\+Vector}} (\mbox{\hyperlink{namespace_pub_sub_a30acb418a473446afbfee61b608659b9}{Unique\+Ptr}}$<$ B\+IO $>$ \&bio)
+\begin{DoxyCompactList}\small\item\em Read X amount of bytes from the bio and return them as string. \end{DoxyCompactList}\item 
+static std\+::vector$<$ char $>$ \mbox{\hyperlink{class_pub_sub_1_1_util_1_1_bio_util_a868acfc21b4a82f798a2f8f27d204495}{read\+Bytes}} (\mbox{\hyperlink{namespace_pub_sub_a30acb418a473446afbfee61b608659b9}{Unique\+Ptr}}$<$ B\+IO $>$ \&bio, int amount)
+\begin{DoxyCompactList}\small\item\em Read X amount of bytes from the bio and return them as string. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{class_pub_sub_1_1_util_1_1_bio_util_ad5e387d5af395a6451f8e98a67a00b4a}{read\+Headers}} (\mbox{\hyperlink{namespace_pub_sub_a30acb418a473446afbfee61b608659b9}{Unique\+Ptr}}$<$ B\+IO $>$ \&bio, std\+::string \&leftover)
+\begin{DoxyCompactList}\small\item\em Read all bytes until encountering \textbackslash{}r~\newline
+\textbackslash{}r~\newline
+, and return the data without the \textbackslash{}r~\newline
+\textbackslash{}r~\newline
+. \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{class_pub_sub_1_1_util_1_1_bio_util_a157689ba535c5c58fe2d69f2e9912b8d}{read\+Headers}} (\mbox{\hyperlink{namespace_pub_sub_a30acb418a473446afbfee61b608659b9}{Unique\+Ptr}}$<$ B\+IO $>$ \&bio)
+\item 
+static bool \mbox{\hyperlink{class_pub_sub_1_1_util_1_1_bio_util_a648ab545044f50fccb9d61a5a23664f7}{socket\+Connected}} (B\+IO $\ast$bio)
+\begin{DoxyCompactList}\small\item\em Check if a bio of type socket accepts data. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_pub_sub_1_1_util_1_1_bio_util_a87c89c0f826303fd6723767ce0d524fa}{socket\+Connected}} (\mbox{\hyperlink{namespace_pub_sub_a30acb418a473446afbfee61b608659b9}{Unique\+Ptr}}$<$ B\+IO $>$ \&bio)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_pub_sub_1_1_util_1_1_bio_util_a3f6c000868f2f22f6710c9d3b305462e}\label{class_pub_sub_1_1_util_1_1_bio_util_a3f6c000868f2f22f6710c9d3b305462e}} 
+\index{PubSub::Util::BioUtil@{PubSub::Util::BioUtil}!readBytes@{readBytes}}
+\index{readBytes@{readBytes}!PubSub::Util::BioUtil@{PubSub::Util::BioUtil}}
+\doxysubsubsection{\texorpdfstring{readBytes()}{readBytes()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t size$>$ \\
+std\+::string Pub\+Sub\+::\+Util\+::\+Bio\+Util\+::read\+Bytes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_pub_sub_a30acb418a473446afbfee61b608659b9}{Unique\+Ptr}}$<$ B\+IO $>$ \&}]{bio }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Read X amount of bytes from the bio and return them as string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bio} & Reference to bio. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em amount} & The amount to read from the bio. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+The bytes read as string. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_pub_sub_1_1_util_1_1_bio_util_a868acfc21b4a82f798a2f8f27d204495}\label{class_pub_sub_1_1_util_1_1_bio_util_a868acfc21b4a82f798a2f8f27d204495}} 
+\index{PubSub::Util::BioUtil@{PubSub::Util::BioUtil}!readBytes@{readBytes}}
+\index{readBytes@{readBytes}!PubSub::Util::BioUtil@{PubSub::Util::BioUtil}}
+\doxysubsubsection{\texorpdfstring{readBytes()}{readBytes()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ char $>$ Pub\+Sub\+::\+Util\+::\+Bio\+Util\+::read\+Bytes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_pub_sub_a30acb418a473446afbfee61b608659b9}{Unique\+Ptr}}$<$ B\+IO $>$ \&}]{bio,  }\item[{int}]{amount }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Read X amount of bytes from the bio and return them as string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bio} & Reference to bio. \\
+\hline
+{\em amount} & The amount to read from the bio. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The bytes read as vector of chars. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_pub_sub_1_1_util_1_1_bio_util_a9cb6e3e1a991f1ae83710143958c955b}\label{class_pub_sub_1_1_util_1_1_bio_util_a9cb6e3e1a991f1ae83710143958c955b}} 
+\index{PubSub::Util::BioUtil@{PubSub::Util::BioUtil}!readBytesVector@{readBytesVector}}
+\index{readBytesVector@{readBytesVector}!PubSub::Util::BioUtil@{PubSub::Util::BioUtil}}
+\doxysubsubsection{\texorpdfstring{readBytesVector()}{readBytesVector()}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t size$>$ \\
+std\+::vector$<$ char $>$ Pub\+Sub\+::\+Util\+::\+Bio\+Util\+::read\+Bytes\+Vector (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_pub_sub_a30acb418a473446afbfee61b608659b9}{Unique\+Ptr}}$<$ B\+IO $>$ \&}]{bio }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Read X amount of bytes from the bio and return them as string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bio} & Reference to bio. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em amount} & The amount to read from the bio. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+The bytes read as vector of chars. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_pub_sub_1_1_util_1_1_bio_util_a157689ba535c5c58fe2d69f2e9912b8d}\label{class_pub_sub_1_1_util_1_1_bio_util_a157689ba535c5c58fe2d69f2e9912b8d}} 
+\index{PubSub::Util::BioUtil@{PubSub::Util::BioUtil}!readHeaders@{readHeaders}}
+\index{readHeaders@{readHeaders}!PubSub::Util::BioUtil@{PubSub::Util::BioUtil}}
+\doxysubsubsection{\texorpdfstring{readHeaders()}{readHeaders()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string Pub\+Sub\+::\+Util\+::\+Bio\+Util\+::read\+Headers (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_pub_sub_a30acb418a473446afbfee61b608659b9}{Unique\+Ptr}}$<$ B\+IO $>$ \&}]{bio }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_pub_sub_1_1_util_1_1_bio_util_ad5e387d5af395a6451f8e98a67a00b4a}\label{class_pub_sub_1_1_util_1_1_bio_util_ad5e387d5af395a6451f8e98a67a00b4a}} 
+\index{PubSub::Util::BioUtil@{PubSub::Util::BioUtil}!readHeaders@{readHeaders}}
+\index{readHeaders@{readHeaders}!PubSub::Util::BioUtil@{PubSub::Util::BioUtil}}
+\doxysubsubsection{\texorpdfstring{readHeaders()}{readHeaders()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::string Pub\+Sub\+::\+Util\+::\+Bio\+Util\+::read\+Headers (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_pub_sub_a30acb418a473446afbfee61b608659b9}{Unique\+Ptr}}$<$ B\+IO $>$ \&}]{bio,  }\item[{std\+::string \&}]{leftover }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Read all bytes until encountering \textbackslash{}r~\newline
+\textbackslash{}r~\newline
+, and return the data without the \textbackslash{}r~\newline
+\textbackslash{}r~\newline
+. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bio} & The bio to read from. \\
+\hline
+{\em leftover} & all of the data thata was read after \textbackslash{}r~\newline
+\textbackslash{}r~\newline
+.s \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_pub_sub_1_1_util_1_1_bio_util_a9f2e6dc7f378474d3d1f5759cbd7973e}\label{class_pub_sub_1_1_util_1_1_bio_util_a9f2e6dc7f378474d3d1f5759cbd7973e}} 
+\index{PubSub::Util::BioUtil@{PubSub::Util::BioUtil}!readSomeData@{readSomeData}}
+\index{readSomeData@{readSomeData}!PubSub::Util::BioUtil@{PubSub::Util::BioUtil}}
+\doxysubsubsection{\texorpdfstring{readSomeData()}{readSomeData()}}
+{\footnotesize\ttfamily std\+::string Pub\+Sub\+::\+Util\+::\+Bio\+Util\+::read\+Some\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_pub_sub_a30acb418a473446afbfee61b608659b9}{Unique\+Ptr}}$<$ B\+IO $>$ \&}]{bio }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+read 1024 bytes of data and return them. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bio} & Reference to the bio. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The first 1024 bytes of the data that were read by the bio. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_pub_sub_1_1_util_1_1_bio_util_a648ab545044f50fccb9d61a5a23664f7}\label{class_pub_sub_1_1_util_1_1_bio_util_a648ab545044f50fccb9d61a5a23664f7}} 
+\index{PubSub::Util::BioUtil@{PubSub::Util::BioUtil}!socketConnected@{socketConnected}}
+\index{socketConnected@{socketConnected}!PubSub::Util::BioUtil@{PubSub::Util::BioUtil}}
+\doxysubsubsection{\texorpdfstring{socketConnected()}{socketConnected()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Pub\+Sub\+::\+Util\+::\+Bio\+Util\+::socket\+Connected (\begin{DoxyParamCaption}\item[{B\+IO $\ast$}]{bio }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check if a bio of type socket accepts data. 
+
+\mbox{\Hypertarget{class_pub_sub_1_1_util_1_1_bio_util_a87c89c0f826303fd6723767ce0d524fa}\label{class_pub_sub_1_1_util_1_1_bio_util_a87c89c0f826303fd6723767ce0d524fa}} 
+\index{PubSub::Util::BioUtil@{PubSub::Util::BioUtil}!socketConnected@{socketConnected}}
+\index{socketConnected@{socketConnected}!PubSub::Util::BioUtil@{PubSub::Util::BioUtil}}
+\doxysubsubsection{\texorpdfstring{socketConnected()}{socketConnected()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Pub\+Sub\+::\+Util\+::\+Bio\+Util\+::socket\+Connected (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_pub_sub_a30acb418a473446afbfee61b608659b9}{Unique\+Ptr}}$<$ B\+IO $>$ \&}]{bio }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/headers/\+Util/\mbox{\hyperlink{_bio_util_8hpp}{Bio\+Util.\+hpp}}\item 
+source/\mbox{\hyperlink{_bio_util_8cpp}{Bio\+Util.\+cpp}}\end{DoxyCompactItemize}

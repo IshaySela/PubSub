@@ -10,7 +10,7 @@
 #include "Util/BioTypes.hpp"
 #include "Protocol/Handshake.hpp"
 
-#define MAX_HEADER_LENGTH 1024 * 4 // Set max header length to be 4 kb.
+#define MAX_HEADER_LENGTH 1024*4 // Set max header length to be 4 kb.
 
 using PubSub::Util::ClientBIO;
 using PubSub::Util::ClientsFactoryBIO;
@@ -19,7 +19,7 @@ namespace PubSub
 {
     class Publisher;
     /**
-     * @brief Listen to incoming connections and sorts the clients to publishers and subscriber, according to the handshake the client sends.
+    * @brief Listen to incoming connections and sorts the clients to publishers and subscriber, according to the handshake the client sends.
     */
     class TlsSocketServer
     {
@@ -28,13 +28,13 @@ namespace PubSub
         ~TlsSocketServer();
 
         /**
-         * @brief Accepts clients, recive the handshake and handling the client accordingly.
+        * @brief Accepts clients, recive the handshake and handling the client accordingly.
         */
         void acceptClients();
         /**
-         * @brief Add the string given to the disconnectedPublishsers list.
-         * Note this function does not actually remove the publisher from the publishers map, but signals the cleaner thread to remove the publisher. 
-         * @param id The id of the publisher to remove.
+        * @brief Add the string given to the disconnectedPublishsers list.
+        * Note this function does not actually remove the publisher from the publishers map, but signals the cleaner thread to remove the publisher. 
+        * @param id The id of the publisher to remove.
         */
         void removePublisher(std::string id);
     private:
@@ -46,24 +46,24 @@ namespace PubSub
         std::mutex disconnectedPublishsersLock; ///< The lock for the disconnectedPublishsers array
 
         /**
-         * @brief Get the latest client and return it.
-         * @returns The latest client.
+        * @brief Get the latest client and return it.
+        * @returns The latest client.
         */
         ClientBIO acceptNewTcpConnection();
 
         /**
-         * @brief Create a publisher and add it to the publishers list. Send the handshake response back to the client.
+        * @brief Create a publisher and add it to the publishers list. Send the handshake response back to the client.
         */
         void handlePublisher(ClientBIO& socket);
         /**
-         * @brief Create a subscriber and add it to requested publisher.
-         * @param socket The socket of the subscriber.
-         * @param handshake The handshake the client sent.
+        * @brief Create a subscriber and add it to requested publisher.
+        *@param socket The socket of the subscriber.
+        *@param handshake The handshake the client sent.
         */
         void handleSubscriber(ClientBIO& socket, Protocol::Handshake& handshake);
 
         /**
-         * @brief Iterate over the disconnected publishers list and remove the dead connections.
+        * @brief Iterate over the disconnected publishers list and remove the dead connections.
         */
         void publishersCleaner();
     };

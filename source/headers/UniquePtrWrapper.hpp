@@ -5,7 +5,7 @@
 #include <memory>
 
 /**
- * @file Create wrappers for openssl objects using unique_ptr.
+* @file Create wrappers for openssl objects using unique_ptr.
 */
 
 namespace PubSub

@@ -7,7 +7,7 @@ using PubSub::Util::ClientBIO;
 namespace PubSub
 {
     /**
-     * @brief Contains the BIO of a subscriber and other metadata about the subscriber.
+    * @brief Contains the BIO of a subscriber and other metadata about the subscriber.
     */
     class Subscriber
     {

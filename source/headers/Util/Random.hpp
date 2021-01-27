@@ -10,17 +10,17 @@ namespace PubSub
     namespace Util
     {
         /**
-         * @brief Create random string.
-         * @param len The size of the string.
-         * @returns A random string of the size len.
+        * @brief Create random string.
+        *@param len The size of the string.
+        *@returns A random string of the size len.
         */
         std::string randomString(const int len);
 
         /**
-         * @brief Create random integer.
-         * @param min The minimum value of the number.
-         * @param max The maximum vakue of the number.
-         * @returns A random number between min and max.
+        * @brief Create random integer.
+        *@param min The minimum value of the number.
+        *@param max The maximum vakue of the number.
+        *@returns A random number between min and max.
         */
         int randomInteger(int min = 0, int max = RAND_MAX);
     } // namespace Util

@@ -9,8 +9,8 @@ namespace PubSub
     namespace Protocol
     {
         /**
-         * @brief Represents the subscribe to endpoint request.
-         * Based on Schema/4_subscribe-to-endpoint.json
+        * @brief Represents the subscribe to endpoint request.
+        * Based on Schema/4_subscribe-to-endpoint.json
         */
         class SubscribeToEndpointRequest
         {

@@ -1,0 +1,120 @@
+\hypertarget{class_pub_sub_1_1_protocol_1_1_handshake}{}\doxysection{Pub\+Sub\+::Protocol\+::Handshake Class Reference}
+\label{class_pub_sub_1_1_protocol_1_1_handshake}\index{PubSub::Protocol::Handshake@{PubSub::Protocol::Handshake}}
+
+
+The handshake class wrapps the json object recived from the client, and creates simple ways to access the headers information. Implmenets /\+Schema/0\+\_\+handshake.json.  
+
+
+
+
+{\ttfamily \#include $<$Handshake.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_pub_sub_1_1_protocol_1_1_handshake_a8ed246032f7249605f731678979ccdfe}{Handshake}} (const std\+::string \&raw)
+\item 
+\mbox{\hyperlink{class_pub_sub_1_1_protocol_1_1_handshake_a21bbade0e5f4420ba34a32e0f9f07098}{Handshake}} (const char $\ast$raw)
+\item 
+bool \mbox{\hyperlink{class_pub_sub_1_1_protocol_1_1_handshake_ae084549c681dba2fa527f5d51cd6f6c9}{valid\+Headers}} ()
+\begin{DoxyCompactList}\small\item\em Chek if the json object is valid. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_pub_sub_1_1_protocol_1_1_handshake_a6526c48e61b45180b0dc06ed84a0e765}{get\+Should\+Encrypt}} () const
+\item 
+std\+::string \mbox{\hyperlink{class_pub_sub_1_1_protocol_1_1_handshake_a2591621f42b655ecb29557e400413cc1}{get\+Authentication\+Secret}} () const
+\item 
+std\+::string \mbox{\hyperlink{class_pub_sub_1_1_protocol_1_1_handshake_a1c080eb16acdb2e42b3c6356c64e20d9}{get\+Encryption\+String}} () const
+\item 
+\mbox{\hyperlink{namespace_pub_sub_1_1_protocol_a35c6543a8ae383b425b3d4a3e7c758b3}{Client\+Type}} \mbox{\hyperlink{class_pub_sub_1_1_protocol_1_1_handshake_aaf4d069c0350dc2c00669c3f4def4fe8}{get\+Client\+Type}} () const
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{class_pub_sub_1_1_protocol_1_1_handshake_a3725f83d249391c68d4af018237e3028}{get}} (const char $\ast$header\+Name)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_pub_sub_1_1_protocol_1_1_handshake}{Handshake}} \mbox{\hyperlink{class_pub_sub_1_1_protocol_1_1_handshake_a3e873b6de655af2e427a5f3d1d44aa85}{create\+And\+Throw}} (const std\+::string \&json)
+\item 
+static \mbox{\hyperlink{class_pub_sub_1_1_protocol_1_1_handshake}{Handshake}} \mbox{\hyperlink{class_pub_sub_1_1_protocol_1_1_handshake_a6b895b3618625cae9c975a4f5fff6fb5}{create\+And\+Throw}} (const char $\ast$json)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The handshake class wrapps the json object recived from the client, and creates simple ways to access the headers information. Implmenets /\+Schema/0\+\_\+handshake.json. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_pub_sub_1_1_protocol_1_1_handshake_a8ed246032f7249605f731678979ccdfe}\label{class_pub_sub_1_1_protocol_1_1_handshake_a8ed246032f7249605f731678979ccdfe}} 
+\index{PubSub::Protocol::Handshake@{PubSub::Protocol::Handshake}!Handshake@{Handshake}}
+\index{Handshake@{Handshake}!PubSub::Protocol::Handshake@{PubSub::Protocol::Handshake}}
+\doxysubsubsection{\texorpdfstring{Handshake()}{Handshake()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Pub\+Sub\+::\+Protocol\+::\+Handshake\+::\+Handshake (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{raw }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_pub_sub_1_1_protocol_1_1_handshake_a21bbade0e5f4420ba34a32e0f9f07098}\label{class_pub_sub_1_1_protocol_1_1_handshake_a21bbade0e5f4420ba34a32e0f9f07098}} 
+\index{PubSub::Protocol::Handshake@{PubSub::Protocol::Handshake}!Handshake@{Handshake}}
+\index{Handshake@{Handshake}!PubSub::Protocol::Handshake@{PubSub::Protocol::Handshake}}
+\doxysubsubsection{\texorpdfstring{Handshake()}{Handshake()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Pub\+Sub\+::\+Protocol\+::\+Handshake\+::\+Handshake (\begin{DoxyParamCaption}\item[{const char $\ast$}]{raw }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_pub_sub_1_1_protocol_1_1_handshake_a6b895b3618625cae9c975a4f5fff6fb5}\label{class_pub_sub_1_1_protocol_1_1_handshake_a6b895b3618625cae9c975a4f5fff6fb5}} 
+\index{PubSub::Protocol::Handshake@{PubSub::Protocol::Handshake}!createAndThrow@{createAndThrow}}
+\index{createAndThrow@{createAndThrow}!PubSub::Protocol::Handshake@{PubSub::Protocol::Handshake}}
+\doxysubsubsection{\texorpdfstring{createAndThrow()}{createAndThrow()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_pub_sub_1_1_protocol_1_1_handshake}{Handshake}} Pub\+Sub\+::\+Protocol\+::\+Handshake\+::create\+And\+Throw (\begin{DoxyParamCaption}\item[{const char $\ast$}]{json }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_pub_sub_1_1_protocol_1_1_handshake_a3e873b6de655af2e427a5f3d1d44aa85}\label{class_pub_sub_1_1_protocol_1_1_handshake_a3e873b6de655af2e427a5f3d1d44aa85}} 
+\index{PubSub::Protocol::Handshake@{PubSub::Protocol::Handshake}!createAndThrow@{createAndThrow}}
+\index{createAndThrow@{createAndThrow}!PubSub::Protocol::Handshake@{PubSub::Protocol::Handshake}}
+\doxysubsubsection{\texorpdfstring{createAndThrow()}{createAndThrow()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_pub_sub_1_1_protocol_1_1_handshake}{Handshake}} Pub\+Sub\+::\+Protocol\+::\+Handshake\+::create\+And\+Throw (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Create a handshake class, and throw runtime error if the json is not validate. \mbox{\Hypertarget{class_pub_sub_1_1_protocol_1_1_handshake_a3725f83d249391c68d4af018237e3028}\label{class_pub_sub_1_1_protocol_1_1_handshake_a3725f83d249391c68d4af018237e3028}} 
+\index{PubSub::Protocol::Handshake@{PubSub::Protocol::Handshake}!get@{get}}
+\index{get@{get}!PubSub::Protocol::Handshake@{PubSub::Protocol::Handshake}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T Pub\+Sub\+::\+Protocol\+::\+Handshake\+::get (\begin{DoxyParamCaption}\item[{const char $\ast$}]{header\+Name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_pub_sub_1_1_protocol_1_1_handshake_a2591621f42b655ecb29557e400413cc1}\label{class_pub_sub_1_1_protocol_1_1_handshake_a2591621f42b655ecb29557e400413cc1}} 
+\index{PubSub::Protocol::Handshake@{PubSub::Protocol::Handshake}!getAuthenticationSecret@{getAuthenticationSecret}}
+\index{getAuthenticationSecret@{getAuthenticationSecret}!PubSub::Protocol::Handshake@{PubSub::Protocol::Handshake}}
+\doxysubsubsection{\texorpdfstring{getAuthenticationSecret()}{getAuthenticationSecret()}}
+{\footnotesize\ttfamily std\+::string Pub\+Sub\+::\+Protocol\+::\+Handshake\+::get\+Authentication\+Secret (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_pub_sub_1_1_protocol_1_1_handshake_aaf4d069c0350dc2c00669c3f4def4fe8}\label{class_pub_sub_1_1_protocol_1_1_handshake_aaf4d069c0350dc2c00669c3f4def4fe8}} 
+\index{PubSub::Protocol::Handshake@{PubSub::Protocol::Handshake}!getClientType@{getClientType}}
+\index{getClientType@{getClientType}!PubSub::Protocol::Handshake@{PubSub::Protocol::Handshake}}
+\doxysubsubsection{\texorpdfstring{getClientType()}{getClientType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_pub_sub_1_1_protocol_a35c6543a8ae383b425b3d4a3e7c758b3}{Client\+Type}} Pub\+Sub\+::\+Protocol\+::\+Handshake\+::get\+Client\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_pub_sub_1_1_protocol_1_1_handshake_a1c080eb16acdb2e42b3c6356c64e20d9}\label{class_pub_sub_1_1_protocol_1_1_handshake_a1c080eb16acdb2e42b3c6356c64e20d9}} 
+\index{PubSub::Protocol::Handshake@{PubSub::Protocol::Handshake}!getEncryptionString@{getEncryptionString}}
+\index{getEncryptionString@{getEncryptionString}!PubSub::Protocol::Handshake@{PubSub::Protocol::Handshake}}
+\doxysubsubsection{\texorpdfstring{getEncryptionString()}{getEncryptionString()}}
+{\footnotesize\ttfamily std\+::string Pub\+Sub\+::\+Protocol\+::\+Handshake\+::get\+Encryption\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_pub_sub_1_1_protocol_1_1_handshake_a6526c48e61b45180b0dc06ed84a0e765}\label{class_pub_sub_1_1_protocol_1_1_handshake_a6526c48e61b45180b0dc06ed84a0e765}} 
+\index{PubSub::Protocol::Handshake@{PubSub::Protocol::Handshake}!getShouldEncrypt@{getShouldEncrypt}}
+\index{getShouldEncrypt@{getShouldEncrypt}!PubSub::Protocol::Handshake@{PubSub::Protocol::Handshake}}
+\doxysubsubsection{\texorpdfstring{getShouldEncrypt()}{getShouldEncrypt()}}
+{\footnotesize\ttfamily bool Pub\+Sub\+::\+Protocol\+::\+Handshake\+::get\+Should\+Encrypt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_pub_sub_1_1_protocol_1_1_handshake_ae084549c681dba2fa527f5d51cd6f6c9}\label{class_pub_sub_1_1_protocol_1_1_handshake_ae084549c681dba2fa527f5d51cd6f6c9}} 
+\index{PubSub::Protocol::Handshake@{PubSub::Protocol::Handshake}!validHeaders@{validHeaders}}
+\index{validHeaders@{validHeaders}!PubSub::Protocol::Handshake@{PubSub::Protocol::Handshake}}
+\doxysubsubsection{\texorpdfstring{validHeaders()}{validHeaders()}}
+{\footnotesize\ttfamily bool Pub\+Sub\+::\+Protocol\+::\+Handshake\+::valid\+Headers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Chek if the json object is valid. 
+
+\begin{DoxyReturn}{Returns}
+boolean. true if the json contains all required keys, false otherwise. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/headers/\+Protocol/\mbox{\hyperlink{_handshake_8hpp}{Handshake.\+hpp}}\item 
+source/\mbox{\hyperlink{_handshake_8cpp}{Handshake.\+cpp}}\end{DoxyCompactItemize}

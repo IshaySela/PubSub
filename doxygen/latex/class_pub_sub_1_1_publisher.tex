@@ -1,0 +1,101 @@
+\hypertarget{class_pub_sub_1_1_publisher}{}\doxysection{Pub\+Sub\+::Publisher Class Reference}
+\label{class_pub_sub_1_1_publisher}\index{PubSub::Publisher@{PubSub::Publisher}}
+
+
+The class publisher listens for data from the client and emits it to all of the subscribers.  
+
+
+
+
+{\ttfamily \#include $<$Publisher.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_pub_sub_1_1_publisher_a5546e2f1326437be2ead863442e99015}{Publisher}} (std\+::string id, Client\+B\+IO socket, \mbox{\hyperlink{class_pub_sub_1_1_tls_socket_server}{Tls\+Socket\+Server}} \&server)
+\item 
+\mbox{\hyperlink{class_pub_sub_1_1_publisher_a83dc821abb710a15a0b3affd89b6d8b0}{$\sim$\+Publisher}} ()
+\item 
+void \mbox{\hyperlink{class_pub_sub_1_1_publisher_a4f9cffb32a24bbf55ca234a4499d80d7}{set\+Client}} (Client\+B\+IO client)
+\item 
+std\+::string \mbox{\hyperlink{class_pub_sub_1_1_publisher_a650d3a3ab8391c2a4366fcd1e4f77700}{get\+Id}} () const
+\item 
+bool \mbox{\hyperlink{class_pub_sub_1_1_publisher_a0a27d27ea4faf8017620a78327753d2c}{is\+Worker\+Done}} () const
+\begin{DoxyCompactList}\small\item\em return the status of the worker, atomically \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_pub_sub_1_1_publisher_a8a7ca7b5680ececff49ba24fd2f94bd0}{add\+New}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_pub_sub_1_1_subscriber}{Subscriber}} $>$ subscriber, std\+::string id)
+\item 
+void \mbox{\hyperlink{class_pub_sub_1_1_publisher_aff58b083eaa9a1d7b0e9bc3363b1b4df}{start}} ()
+\item 
+std\+::future$<$ void $>$ \mbox{\hyperlink{class_pub_sub_1_1_publisher_a0a6da0a5aa979c0df2943d457f63936f}{emit}} (const char $\ast$buffer, size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em emit the buffer to all of the subscribers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The class publisher listens for data from the client and emits it to all of the subscribers. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_pub_sub_1_1_publisher_a5546e2f1326437be2ead863442e99015}\label{class_pub_sub_1_1_publisher_a5546e2f1326437be2ead863442e99015}} 
+\index{PubSub::Publisher@{PubSub::Publisher}!Publisher@{Publisher}}
+\index{Publisher@{Publisher}!PubSub::Publisher@{PubSub::Publisher}}
+\doxysubsubsection{\texorpdfstring{Publisher()}{Publisher()}}
+{\footnotesize\ttfamily Pub\+Sub\+::\+Publisher\+::\+Publisher (\begin{DoxyParamCaption}\item[{std\+::string}]{id,  }\item[{Client\+B\+IO}]{socket,  }\item[{\mbox{\hyperlink{class_pub_sub_1_1_tls_socket_server}{Tls\+Socket\+Server}} \&}]{server }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_pub_sub_1_1_publisher_a83dc821abb710a15a0b3affd89b6d8b0}\label{class_pub_sub_1_1_publisher_a83dc821abb710a15a0b3affd89b6d8b0}} 
+\index{PubSub::Publisher@{PubSub::Publisher}!````~Publisher@{$\sim$Publisher}}
+\index{````~Publisher@{$\sim$Publisher}!PubSub::Publisher@{PubSub::Publisher}}
+\doxysubsubsection{\texorpdfstring{$\sim$Publisher()}{~Publisher()}}
+{\footnotesize\ttfamily Pub\+Sub\+::\+Publisher\+::$\sim$\+Publisher (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_pub_sub_1_1_publisher_a8a7ca7b5680ececff49ba24fd2f94bd0}\label{class_pub_sub_1_1_publisher_a8a7ca7b5680ececff49ba24fd2f94bd0}} 
+\index{PubSub::Publisher@{PubSub::Publisher}!addNew@{addNew}}
+\index{addNew@{addNew}!PubSub::Publisher@{PubSub::Publisher}}
+\doxysubsubsection{\texorpdfstring{addNew()}{addNew()}}
+{\footnotesize\ttfamily void Pub\+Sub\+::\+Publisher\+::add\+New (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_pub_sub_1_1_subscriber}{Subscriber}} $>$}]{subscriber,  }\item[{std\+::string}]{id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_pub_sub_1_1_publisher_a0a6da0a5aa979c0df2943d457f63936f}\label{class_pub_sub_1_1_publisher_a0a6da0a5aa979c0df2943d457f63936f}} 
+\index{PubSub::Publisher@{PubSub::Publisher}!emit@{emit}}
+\index{emit@{emit}!PubSub::Publisher@{PubSub::Publisher}}
+\doxysubsubsection{\texorpdfstring{emit()}{emit()}}
+{\footnotesize\ttfamily std\+::future$<$void$>$ Pub\+Sub\+::\+Publisher\+::emit (\begin{DoxyParamCaption}\item[{const char $\ast$}]{buffer,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+emit the buffer to all of the subscribers. 
+
+\mbox{\Hypertarget{class_pub_sub_1_1_publisher_a650d3a3ab8391c2a4366fcd1e4f77700}\label{class_pub_sub_1_1_publisher_a650d3a3ab8391c2a4366fcd1e4f77700}} 
+\index{PubSub::Publisher@{PubSub::Publisher}!getId@{getId}}
+\index{getId@{getId}!PubSub::Publisher@{PubSub::Publisher}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily std\+::string Pub\+Sub\+::\+Publisher\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_pub_sub_1_1_publisher_a0a27d27ea4faf8017620a78327753d2c}\label{class_pub_sub_1_1_publisher_a0a27d27ea4faf8017620a78327753d2c}} 
+\index{PubSub::Publisher@{PubSub::Publisher}!isWorkerDone@{isWorkerDone}}
+\index{isWorkerDone@{isWorkerDone}!PubSub::Publisher@{PubSub::Publisher}}
+\doxysubsubsection{\texorpdfstring{isWorkerDone()}{isWorkerDone()}}
+{\footnotesize\ttfamily bool Pub\+Sub\+::\+Publisher\+::is\+Worker\+Done (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+return the status of the worker, atomically 
+
+\mbox{\Hypertarget{class_pub_sub_1_1_publisher_a4f9cffb32a24bbf55ca234a4499d80d7}\label{class_pub_sub_1_1_publisher_a4f9cffb32a24bbf55ca234a4499d80d7}} 
+\index{PubSub::Publisher@{PubSub::Publisher}!setClient@{setClient}}
+\index{setClient@{setClient}!PubSub::Publisher@{PubSub::Publisher}}
+\doxysubsubsection{\texorpdfstring{setClient()}{setClient()}}
+{\footnotesize\ttfamily void Pub\+Sub\+::\+Publisher\+::set\+Client (\begin{DoxyParamCaption}\item[{Client\+B\+IO}]{client }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_pub_sub_1_1_publisher_aff58b083eaa9a1d7b0e9bc3363b1b4df}\label{class_pub_sub_1_1_publisher_aff58b083eaa9a1d7b0e9bc3363b1b4df}} 
+\index{PubSub::Publisher@{PubSub::Publisher}!start@{start}}
+\index{start@{start}!PubSub::Publisher@{PubSub::Publisher}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void Pub\+Sub\+::\+Publisher\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+source/headers/\mbox{\hyperlink{_publisher_8hpp}{Publisher.\+hpp}}\item 
+source/\mbox{\hyperlink{_publisher_8cpp}{Publisher.\+cpp}}\end{DoxyCompactItemize}
