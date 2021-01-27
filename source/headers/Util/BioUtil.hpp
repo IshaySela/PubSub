@@ -26,6 +26,12 @@ namespace PubSub
 
             static std::string readHeaders(UniquePtr<BIO> &bio);
             static std::string readHeaders(UniquePtr<BIO> &bio, std::string &);
+
+            /**
+             * @brief Check if a bio of type socket accepts data.
+            */
+            static bool socketConnected(BIO* bio);
+            static bool socketConnected(UniquePtr<BIO>& bio);
         };
 
         template <std::size_t size>

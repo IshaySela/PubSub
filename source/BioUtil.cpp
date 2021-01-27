@@ -1,13 +1,12 @@
 #include "headers/Util/BioUtil.hpp"
-
-
+#include <sys/socket.h>
 #include <iostream>
 
 namespace PubSub
 {
     namespace Util
     {
-        std::vector<char> BioUtil::readBytes(UniquePtr<BIO>& bio, int size)
+        std::vector<char> BioUtil::readBytes(UniquePtr<BIO> &bio, int size)
         {
             std::vector<char> buffer;
             buffer.resize(size);
@@ -28,19 +27,18 @@ namespace PubSub
 
             return buffer;
         }
-        
+
         std::string BioUtil::readSomeData(UniquePtr<BIO> &bio)
         {
             return BioUtil::readBytes<1024>(bio).data();
         }
 
-
-        std::string BioUtil::readHeaders(UniquePtr<BIO> &bio, std::string& leftover)
+        std::string BioUtil::readHeaders(UniquePtr<BIO> &bio, std::string &leftover)
         {
             std::string headers = "";
             size_t lastIndex = std::string::npos;
             leftover = "";
-            
+
             do
             {
                 if (headers.length() > 1024 * 4)
@@ -50,19 +48,31 @@ namespace PubSub
                 lastIndex = headers.find("\r\n\r\n"); // Search for the delimiter in the buffer recived.
             } while (lastIndex == std::string::npos);
 
-
             leftover = headers.substr(lastIndex + 4);
             headers.erase(lastIndex);
-            
+
             return headers;
         }
 
-        std::string BioUtil::readHeaders(UniquePtr<BIO>& bio)
+        std::string BioUtil::readHeaders(UniquePtr<BIO> &bio)
         {
             std::string body;
             return BioUtil::readHeaders(bio, body);
         }
 
+        bool BioUtil::socketConnected(BIO* bio)
+        {
+            int error_code;
+            socklen_t error_code_size = sizeof(error_code);
+            getsockopt(BIO_get_fd(bio, nullptr), SOL_SOCKET, SO_ERROR, &error_code, &error_code_size);
+            // Check for broken pipe
+            return error_code != EPIPE; 
+        }
+
+        bool BioUtil::socketConnected(UniquePtr<BIO> &bio)
+        {
+            return BioUtil::socketConnected(bio.get());    
+        }
     } // namespace Util
 
 } // namespace PubSub
