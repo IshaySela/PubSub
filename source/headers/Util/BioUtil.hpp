@@ -14,21 +14,49 @@ namespace PubSub
         class BioUtil
         {
         public:
+            /**
+            * @brief read 1024 bytes of data and return them.
+            *@param bio Reference to the bio.
+            *@returns The first 1024 bytes of the data that were read by the bio.
+            */
             static std::string readSomeData(UniquePtr<BIO> &bio);
 
+            /**
+            * @brief Read X amount of bytes from the bio and return them as string.
+            *@param bio Reference to bio. 
+            *@tparam amount The amount to read from the bio.
+            *@returns The bytes read as string.
+            */
             template <std::size_t amount>
             static std::string readBytes(UniquePtr<BIO> &bio);
 
+            /**
+            * @brief Read X amount of bytes from the bio and return them as string.
+            *@param bio Reference to bio. 
+            *@tparam amount The amount to read from the bio.
+            *@returns The bytes read as vector of chars.
+            */
             template <std::size_t amount> 
             static std::vector<char> readBytesVector(UniquePtr<BIO>& bio);
             
+            /**
+            * @brief Read X amount of bytes from the bio and return them as string.
+            *@param bio Reference to bio. 
+            *@param amount The amount to read from the bio.
+            *@returns The bytes read as vector of chars.
+            */
             static std::vector<char> readBytes(UniquePtr<BIO>& bio, int amount);
 
-            static std::string readHeaders(UniquePtr<BIO> &bio);
-            static std::string readHeaders(UniquePtr<BIO> &bio, std::string &);
-
             /**
-             * @brief Check if a bio of type socket accepts data.
+            * @brief Read all bytes until encountering \r\n\r\n, and return the data without the \r\n\r\n. 
+            *@param bio The bio to read from.
+            *@param leftover all of the data thata was read after \r\n\r\n.s
+            */
+            static std::string readHeaders(UniquePtr<BIO> &bio, std::string& leftover);
+            static std::string readHeaders(UniquePtr<BIO> &bio);
+            
+            /**
+            * @brief Check if a bio of type socket accepts data.
             */
             static bool socketConnected(BIO* bio);
             static bool socketConnected(UniquePtr<BIO>& bio);

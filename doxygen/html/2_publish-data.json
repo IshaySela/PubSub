@@ -1,0 +1,17 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema",
+    "title": "The publish request from a publisher.",
+    "description": "Describe the payload emited to the user. every header that starts with X will be forwarded to the client, without the X. X-Forward -> Forward.",
+    "properties": {
+        "Length": {
+            "type":"number",
+            "description": "The length of payload."
+        }, 
+        "DataType": {
+            "type":"string",
+            "description": "The type of the data. This header will be forwarded to the client."
+        }
+    },
+
+    "required": ["Length"]
+}

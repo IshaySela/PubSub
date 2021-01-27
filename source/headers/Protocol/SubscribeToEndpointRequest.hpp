@@ -9,8 +9,8 @@ namespace PubSub
     namespace Protocol
     {
         /**
-         * @brief Represents the subscribe to endpoint request.
-         * Based on Schema/4_subscribe-to-endpoint.json
+        * @brief Represents the subscribe to endpoint request 
+        * <a href="4_subscribe-to-endpoint.json" target="_blank">implements Schema/4_subscribe-to-endpoint.json</a>
         */
         class SubscribeToEndpointRequest
         {
@@ -25,10 +25,8 @@ namespace PubSub
             nlohmann::json json;
             std::string id;
             std::string authSecret;
-
+            
             void getValuesFromJson();
         };
-        
-        
     }
 } // namespace PubSub

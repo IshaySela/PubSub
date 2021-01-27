@@ -1,0 +1,75 @@
+\hypertarget{namespace_pub_sub}{}\doxysection{Pub\+Sub Namespace Reference}
+\label{namespace_pub_sub}\index{PubSub@{PubSub}}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespace_pub_sub_1_1_protocol}{Protocol}}
+\begin{DoxyCompactList}\small\item\em Response for the handshake of publisher client \href{1_publisher-handshake-response.json}{\texttt{ implements Schema/1.\+1\+\_\+publisher-\/handshake-\/response.\+json}} \end{DoxyCompactList}\item 
+ \mbox{\hyperlink{namespace_pub_sub_1_1_util}{Util}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_pub_sub_1_1_deleter_of}{Deleter\+Of}}
+\item 
+struct \mbox{\hyperlink{struct_pub_sub_1_1_deleter_of_3_01_b_i_o_01_4}{Deleter\+Of$<$ B\+I\+O $>$}}
+\item 
+struct \mbox{\hyperlink{struct_pub_sub_1_1_deleter_of_3_01_b_i_o___m_e_t_h_o_d_01_4}{Deleter\+Of$<$ B\+I\+O\+\_\+\+M\+E\+T\+H\+O\+D $>$}}
+\item 
+struct \mbox{\hyperlink{struct_pub_sub_1_1_deleter_of_3_01_s_s_l_01_4}{Deleter\+Of$<$ S\+S\+L $>$}}
+\item 
+struct \mbox{\hyperlink{struct_pub_sub_1_1_deleter_of_3_01_s_s_l___c_t_x_01_4}{Deleter\+Of$<$ S\+S\+L\+\_\+\+C\+T\+X $>$}}
+\item 
+class \mbox{\hyperlink{class_pub_sub_1_1_publisher}{Publisher}}
+\begin{DoxyCompactList}\small\item\em The class publisher listens for data from the client and emits it to all of the subscribers. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_pub_sub_1_1_string_b_i_o}{String\+B\+IO}}
+\item 
+class \mbox{\hyperlink{class_pub_sub_1_1_subscriber}{Subscriber}}
+\begin{DoxyCompactList}\small\item\em Contains the B\+IO of a subscriber and other metadata about the subscriber. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_pub_sub_1_1_tls_socket_server}{Tls\+Socket\+Server}}
+\begin{DoxyCompactList}\small\item\em Listen to incoming connections and sorts the clients to publishers and subscriber, according to the handshake the client sends. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{namespace_pub_sub_a6fe4cc6449285096a65191eb7d573ade}{Subscribers\+Map}} = std\+::unordered\+\_\+map$<$ std\+::string, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_pub_sub_1_1_subscriber}{Subscriber}} $>$ $>$
+\item 
+{\footnotesize template$<$class Open\+S\+S\+L\+Type $>$ }\\using \mbox{\hyperlink{namespace_pub_sub_a30acb418a473446afbfee61b608659b9}{Unique\+Ptr}} = std\+::unique\+\_\+ptr$<$ Open\+S\+S\+L\+Type, \mbox{\hyperlink{struct_pub_sub_1_1_deleter_of}{Deleter\+Of}}$<$ Open\+S\+S\+L\+Type $>$ $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespace_pub_sub_a2fea5bb5c6d056fb627692199454d562}{print\+Errors\+And\+Exit}} (const char $\ast$message)
+\item 
+void \mbox{\hyperlink{namespace_pub_sub_aec3143da484be8d428578f84643723de}{print\+Errors\+And\+Throw}} (const char $\ast$message)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{namespace_pub_sub_a6fe4cc6449285096a65191eb7d573ade}\label{namespace_pub_sub_a6fe4cc6449285096a65191eb7d573ade}} 
+\index{PubSub@{PubSub}!SubscribersMap@{SubscribersMap}}
+\index{SubscribersMap@{SubscribersMap}!PubSub@{PubSub}}
+\doxysubsubsection{\texorpdfstring{SubscribersMap}{SubscribersMap}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespace_pub_sub_a6fe4cc6449285096a65191eb7d573ade}{Pub\+Sub\+::\+Subscribers\+Map}} = typedef std\+::unordered\+\_\+map$<$std\+::string, std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{class_pub_sub_1_1_subscriber}{Subscriber}}$>$ $>$}
+
+\mbox{\Hypertarget{namespace_pub_sub_a30acb418a473446afbfee61b608659b9}\label{namespace_pub_sub_a30acb418a473446afbfee61b608659b9}} 
+\index{PubSub@{PubSub}!UniquePtr@{UniquePtr}}
+\index{UniquePtr@{UniquePtr}!PubSub@{PubSub}}
+\doxysubsubsection{\texorpdfstring{UniquePtr}{UniquePtr}}
+{\footnotesize\ttfamily template$<$class Open\+S\+S\+L\+Type $>$ \\
+using \mbox{\hyperlink{namespace_pub_sub_a30acb418a473446afbfee61b608659b9}{Pub\+Sub\+::\+Unique\+Ptr}} = typedef std\+::unique\+\_\+ptr$<$Open\+S\+S\+L\+Type, \mbox{\hyperlink{struct_pub_sub_1_1_deleter_of}{Deleter\+Of}}$<$Open\+S\+S\+L\+Type$>$ $>$}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespace_pub_sub_a2fea5bb5c6d056fb627692199454d562}\label{namespace_pub_sub_a2fea5bb5c6d056fb627692199454d562}} 
+\index{PubSub@{PubSub}!printErrorsAndExit@{printErrorsAndExit}}
+\index{printErrorsAndExit@{printErrorsAndExit}!PubSub@{PubSub}}
+\doxysubsubsection{\texorpdfstring{printErrorsAndExit()}{printErrorsAndExit()}}
+{\footnotesize\ttfamily void Pub\+Sub\+::print\+Errors\+And\+Exit (\begin{DoxyParamCaption}\item[{const char $\ast$}]{message }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespace_pub_sub_aec3143da484be8d428578f84643723de}\label{namespace_pub_sub_aec3143da484be8d428578f84643723de}} 
+\index{PubSub@{PubSub}!printErrorsAndThrow@{printErrorsAndThrow}}
+\index{printErrorsAndThrow@{printErrorsAndThrow}!PubSub@{PubSub}}
+\doxysubsubsection{\texorpdfstring{printErrorsAndThrow()}{printErrorsAndThrow()}}
+{\footnotesize\ttfamily void Pub\+Sub\+::print\+Errors\+And\+Throw (\begin{DoxyParamCaption}\item[{const char $\ast$}]{message }\end{DoxyParamCaption})}
+

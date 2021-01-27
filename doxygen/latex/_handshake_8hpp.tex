@@ -1,0 +1,68 @@
+\hypertarget{_handshake_8hpp}{}\doxysection{source/headers/\+Protocol/\+Handshake.hpp File Reference}
+\label{_handshake_8hpp}\index{source/headers/Protocol/Handshake.hpp@{source/headers/Protocol/Handshake.hpp}}
+{\ttfamily \#include \char`\"{}../json.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Client\+Type.\+hpp\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_pub_sub_1_1_protocol_1_1_handshake}{Pub\+Sub\+::\+Protocol\+::\+Handshake}}
+\begin{DoxyCompactList}\small\item\em The handshake class wrapps the json object recived from the client, and creates simple ways to access the headers information. \href{0_handshake.json}{\texttt{ implements /\+Schema/0\+\_\+handshake.json}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespace_pub_sub}{Pub\+Sub}}
+\item 
+ \mbox{\hyperlink{namespace_pub_sub_1_1_protocol}{Pub\+Sub\+::\+Protocol}}
+\begin{DoxyCompactList}\small\item\em Response for the handshake of publisher client \href{1_publisher-handshake-response.json}{\texttt{ implements Schema/1.\+1\+\_\+publisher-\/handshake-\/response.\+json}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_handshake_8hpp_a244cdc397acd061455fb09d7101d4364}{H\+E\+A\+D\+E\+R\+\_\+\+N\+A\+M\+E\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+T\+Y\+PE}}~\char`\"{}Client\+Type\char`\"{}
+\item 
+\#define \mbox{\hyperlink{_handshake_8hpp_a3ba599b1254c07cfdf1cf4016adeb651}{H\+E\+A\+D\+E\+R\+\_\+\+N\+A\+M\+E\+\_\+\+A\+U\+T\+H\+E\+N\+T\+I\+C\+A\+T\+I\+O\+N\+\_\+\+S\+E\+C\+R\+ET}}~\char`\"{}Auth\+Secret\char`\"{}
+\item 
+\#define \mbox{\hyperlink{_handshake_8hpp_a37543176e444aed7332da46c6826cc17}{H\+E\+A\+D\+E\+R\+\_\+\+N\+A\+M\+E\+\_\+\+S\+H\+O\+U\+L\+D\+\_\+\+E\+N\+C\+R\+Y\+PT}}~\char`\"{}Encrypt\char`\"{}
+\item 
+\#define \mbox{\hyperlink{_handshake_8hpp_a54d659d189d19a32ae0fb635fab9f2e9}{H\+E\+A\+D\+E\+R\+\_\+\+N\+A\+M\+E\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+S\+T\+R\+I\+NG}}~\char`\"{}Encryption\+String\char`\"{}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{_handshake_8hpp_af13a1979f9e8f62c101433fac6511cc6}{Json}} = nlohmann\+::json
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_handshake_8hpp_a3ba599b1254c07cfdf1cf4016adeb651}\label{_handshake_8hpp_a3ba599b1254c07cfdf1cf4016adeb651}} 
+\index{Handshake.hpp@{Handshake.hpp}!HEADER\_NAME\_AUTHENTICATION\_SECRET@{HEADER\_NAME\_AUTHENTICATION\_SECRET}}
+\index{HEADER\_NAME\_AUTHENTICATION\_SECRET@{HEADER\_NAME\_AUTHENTICATION\_SECRET}!Handshake.hpp@{Handshake.hpp}}
+\doxysubsubsection{\texorpdfstring{HEADER\_NAME\_AUTHENTICATION\_SECRET}{HEADER\_NAME\_AUTHENTICATION\_SECRET}}
+{\footnotesize\ttfamily \#define H\+E\+A\+D\+E\+R\+\_\+\+N\+A\+M\+E\+\_\+\+A\+U\+T\+H\+E\+N\+T\+I\+C\+A\+T\+I\+O\+N\+\_\+\+S\+E\+C\+R\+ET~\char`\"{}Auth\+Secret\char`\"{}}
+
+\mbox{\Hypertarget{_handshake_8hpp_a244cdc397acd061455fb09d7101d4364}\label{_handshake_8hpp_a244cdc397acd061455fb09d7101d4364}} 
+\index{Handshake.hpp@{Handshake.hpp}!HEADER\_NAME\_CLIENT\_TYPE@{HEADER\_NAME\_CLIENT\_TYPE}}
+\index{HEADER\_NAME\_CLIENT\_TYPE@{HEADER\_NAME\_CLIENT\_TYPE}!Handshake.hpp@{Handshake.hpp}}
+\doxysubsubsection{\texorpdfstring{HEADER\_NAME\_CLIENT\_TYPE}{HEADER\_NAME\_CLIENT\_TYPE}}
+{\footnotesize\ttfamily \#define H\+E\+A\+D\+E\+R\+\_\+\+N\+A\+M\+E\+\_\+\+C\+L\+I\+E\+N\+T\+\_\+\+T\+Y\+PE~\char`\"{}Client\+Type\char`\"{}}
+
+\mbox{\Hypertarget{_handshake_8hpp_a54d659d189d19a32ae0fb635fab9f2e9}\label{_handshake_8hpp_a54d659d189d19a32ae0fb635fab9f2e9}} 
+\index{Handshake.hpp@{Handshake.hpp}!HEADER\_NAME\_ENCRYPTION\_STRING@{HEADER\_NAME\_ENCRYPTION\_STRING}}
+\index{HEADER\_NAME\_ENCRYPTION\_STRING@{HEADER\_NAME\_ENCRYPTION\_STRING}!Handshake.hpp@{Handshake.hpp}}
+\doxysubsubsection{\texorpdfstring{HEADER\_NAME\_ENCRYPTION\_STRING}{HEADER\_NAME\_ENCRYPTION\_STRING}}
+{\footnotesize\ttfamily \#define H\+E\+A\+D\+E\+R\+\_\+\+N\+A\+M\+E\+\_\+\+E\+N\+C\+R\+Y\+P\+T\+I\+O\+N\+\_\+\+S\+T\+R\+I\+NG~\char`\"{}Encryption\+String\char`\"{}}
+
+\mbox{\Hypertarget{_handshake_8hpp_a37543176e444aed7332da46c6826cc17}\label{_handshake_8hpp_a37543176e444aed7332da46c6826cc17}} 
+\index{Handshake.hpp@{Handshake.hpp}!HEADER\_NAME\_SHOULD\_ENCRYPT@{HEADER\_NAME\_SHOULD\_ENCRYPT}}
+\index{HEADER\_NAME\_SHOULD\_ENCRYPT@{HEADER\_NAME\_SHOULD\_ENCRYPT}!Handshake.hpp@{Handshake.hpp}}
+\doxysubsubsection{\texorpdfstring{HEADER\_NAME\_SHOULD\_ENCRYPT}{HEADER\_NAME\_SHOULD\_ENCRYPT}}
+{\footnotesize\ttfamily \#define H\+E\+A\+D\+E\+R\+\_\+\+N\+A\+M\+E\+\_\+\+S\+H\+O\+U\+L\+D\+\_\+\+E\+N\+C\+R\+Y\+PT~\char`\"{}Encrypt\char`\"{}}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{_handshake_8hpp_af13a1979f9e8f62c101433fac6511cc6}\label{_handshake_8hpp_af13a1979f9e8f62c101433fac6511cc6}} 
+\index{Handshake.hpp@{Handshake.hpp}!Json@{Json}}
+\index{Json@{Json}!Handshake.hpp@{Handshake.hpp}}
+\doxysubsubsection{\texorpdfstring{Json}{Json}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{_handshake_8hpp_af13a1979f9e8f62c101433fac6511cc6}{Json}} =  nlohmann\+::json}
+

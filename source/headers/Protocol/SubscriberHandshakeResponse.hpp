@@ -7,6 +7,10 @@ namespace PubSub
 {
     namespace Protocol
     {
+        /**
+        * @brief The handshake response for a subscriber. Based on 
+        * <a href="1.2_subscriber-handshake-response.json" target="_blank">implements /Schema/1.2_subscriber-handshake-response.json</a>
+        */
         class SubscriberHandshakeResponse : public Util::ISerializable
         {
         public:

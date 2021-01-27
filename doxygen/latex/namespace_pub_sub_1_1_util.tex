@@ -1,0 +1,79 @@
+\hypertarget{namespace_pub_sub_1_1_util}{}\doxysection{Pub\+Sub\+::Util Namespace Reference}
+\label{namespace_pub_sub_1_1_util}\index{PubSub::Util@{PubSub::Util}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_pub_sub_1_1_util_1_1_bio_util}{Bio\+Util}}
+\item 
+class \mbox{\hyperlink{class_pub_sub_1_1_util_1_1_i_serializable}{I\+Serializable}}
+\begin{DoxyCompactList}\small\item\em interface for serializing object to json. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{namespace_pub_sub_1_1_util_acc32364a584a98b30f75cb165edd944b}{Clients\+Factory\+B\+IO}} = \mbox{\hyperlink{namespace_pub_sub_a30acb418a473446afbfee61b608659b9}{Unique\+Ptr}}$<$ B\+IO $>$
+\item 
+using \mbox{\hyperlink{namespace_pub_sub_1_1_util_a0624142ab70869619245461f7b5b9067}{Client\+B\+IO}} = \mbox{\hyperlink{namespace_pub_sub_a30acb418a473446afbfee61b608659b9}{Unique\+Ptr}}$<$ B\+IO $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{namespace_pub_sub_1_1_util_a8820a7548261a547b70f033bc9d90198}{random\+String}} (const int len)
+\begin{DoxyCompactList}\small\item\em Create random string. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespace_pub_sub_1_1_util_a0c4acab4af9e233cb836f9323f938d0e}{random\+Integer}} (int min=0, int max=R\+A\+N\+D\+\_\+\+M\+AX)
+\begin{DoxyCompactList}\small\item\em Create random integer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{namespace_pub_sub_1_1_util_a0624142ab70869619245461f7b5b9067}\label{namespace_pub_sub_1_1_util_a0624142ab70869619245461f7b5b9067}} 
+\index{PubSub::Util@{PubSub::Util}!ClientBIO@{ClientBIO}}
+\index{ClientBIO@{ClientBIO}!PubSub::Util@{PubSub::Util}}
+\doxysubsubsection{\texorpdfstring{ClientBIO}{ClientBIO}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespace_pub_sub_1_1_util_a0624142ab70869619245461f7b5b9067}{Pub\+Sub\+::\+Util\+::\+Client\+B\+IO}} = typedef \mbox{\hyperlink{namespace_pub_sub_a30acb418a473446afbfee61b608659b9}{Unique\+Ptr}}$<$B\+IO$>$}
+
+\mbox{\Hypertarget{namespace_pub_sub_1_1_util_acc32364a584a98b30f75cb165edd944b}\label{namespace_pub_sub_1_1_util_acc32364a584a98b30f75cb165edd944b}} 
+\index{PubSub::Util@{PubSub::Util}!ClientsFactoryBIO@{ClientsFactoryBIO}}
+\index{ClientsFactoryBIO@{ClientsFactoryBIO}!PubSub::Util@{PubSub::Util}}
+\doxysubsubsection{\texorpdfstring{ClientsFactoryBIO}{ClientsFactoryBIO}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespace_pub_sub_1_1_util_acc32364a584a98b30f75cb165edd944b}{Pub\+Sub\+::\+Util\+::\+Clients\+Factory\+B\+IO}} = typedef \mbox{\hyperlink{namespace_pub_sub_a30acb418a473446afbfee61b608659b9}{Unique\+Ptr}}$<$B\+IO$>$}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespace_pub_sub_1_1_util_a0c4acab4af9e233cb836f9323f938d0e}\label{namespace_pub_sub_1_1_util_a0c4acab4af9e233cb836f9323f938d0e}} 
+\index{PubSub::Util@{PubSub::Util}!randomInteger@{randomInteger}}
+\index{randomInteger@{randomInteger}!PubSub::Util@{PubSub::Util}}
+\doxysubsubsection{\texorpdfstring{randomInteger()}{randomInteger()}}
+{\footnotesize\ttfamily int Pub\+Sub\+::\+Util\+::random\+Integer (\begin{DoxyParamCaption}\item[{int}]{min = {\ttfamily 0},  }\item[{int}]{max = {\ttfamily RAND\+\_\+MAX} }\end{DoxyParamCaption})}
+
+
+
+Create random integer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min} & The minimum value of the number. \\
+\hline
+{\em max} & The maximum vakue of the number. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A random number between min and max. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespace_pub_sub_1_1_util_a8820a7548261a547b70f033bc9d90198}\label{namespace_pub_sub_1_1_util_a8820a7548261a547b70f033bc9d90198}} 
+\index{PubSub::Util@{PubSub::Util}!randomString@{randomString}}
+\index{randomString@{randomString}!PubSub::Util@{PubSub::Util}}
+\doxysubsubsection{\texorpdfstring{randomString()}{randomString()}}
+{\footnotesize\ttfamily std\+::string Pub\+Sub\+::\+Util\+::random\+String (\begin{DoxyParamCaption}\item[{const int}]{len }\end{DoxyParamCaption})}
+
+
+
+Create random string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em len} & The size of the string. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A random string of the size len. 
+\end{DoxyReturn}

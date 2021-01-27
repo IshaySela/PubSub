@@ -1,0 +1,93 @@
+\hypertarget{namespace_pub_sub_1_1_protocol}{}\doxysection{Pub\+Sub\+::Protocol Namespace Reference}
+\label{namespace_pub_sub_1_1_protocol}\index{PubSub::Protocol@{PubSub::Protocol}}
+
+
+Response for the handshake of publisher client \href{1_publisher-handshake-response.json}{\texttt{ implements Schema/1.\+1\+\_\+publisher-\/handshake-\/response.\+json}}  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_pub_sub_1_1_protocol_1_1_handshake}{Handshake}}
+\begin{DoxyCompactList}\small\item\em The handshake class wrapps the json object recived from the client, and creates simple ways to access the headers information. \href{0_handshake.json}{\texttt{ implements /\+Schema/0\+\_\+handshake.json}} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_pub_sub_1_1_protocol_1_1_publish_data_request}{Publish\+Data\+Request}}
+\begin{DoxyCompactList}\small\item\em The request headers for publishing data to the clients. \href{2_publish-data.json}{\texttt{ implements /\+Schema/2\+\_\+publish-\/data.json}} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_pub_sub_1_1_protocol_1_1_publish_data_response}{Publish\+Data\+Response}}
+\begin{DoxyCompactList}\small\item\em The response for publish data request \href{3_publish-data-response.json}{\texttt{ implements Schema/3\+\_\+publish-\/data-\/response.\+json}} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_pub_sub_1_1_protocol_1_1_publisher_handshake_response}{Publisher\+Handshake\+Response}}
+\item 
+class \mbox{\hyperlink{class_pub_sub_1_1_protocol_1_1_subscriber_handshake_response}{Subscriber\+Handshake\+Response}}
+\begin{DoxyCompactList}\small\item\em The handshake response for a subscriber. Based on \href{1.2_subscriber-handshake-response.json}{\texttt{ implements /\+Schema/1.2\+\_\+subscriber-\/handshake-\/response.\+json}} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_pub_sub_1_1_protocol_1_1_subscribe_to_endpoint_request}{Subscribe\+To\+Endpoint\+Request}}
+\begin{DoxyCompactList}\small\item\em Represents the subscribe to endpoint request \href{4_subscribe-to-endpoint.json}{\texttt{ implements Schema/4\+\_\+subscribe-\/to-\/endpoint.\+json}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{namespace_pub_sub_1_1_protocol_a77aae1f3c1d8dddff0e5ad59a9bd34a4}{Client\+Type}} = enum \mbox{\hyperlink{namespace_pub_sub_1_1_protocol_a35c6543a8ae383b425b3d4a3e7c758b3}{Client\+Type}}
+\item 
+using \mbox{\hyperlink{namespace_pub_sub_1_1_protocol_a9a60dadbd6c0f46b783e9174c1666b1e}{Response\+Status}} = enum \mbox{\hyperlink{namespace_pub_sub_1_1_protocol_a017e6fd1c8f9739bdba9af1a76630f8e}{Response\+Status}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespace_pub_sub_1_1_protocol_a35c6543a8ae383b425b3d4a3e7c758b3}{Client\+Type}} \{ \mbox{\hyperlink{namespace_pub_sub_1_1_protocol_a35c6543a8ae383b425b3d4a3e7c758b3a32c73be0cb175da278c8e2af0811b0d1}{Client\+Type\+::\+Publisher}} = 0, 
+\mbox{\hyperlink{namespace_pub_sub_1_1_protocol_a35c6543a8ae383b425b3d4a3e7c758b3a992c4a5b4628d8ebf671cf460254ee81}{Client\+Type\+::\+Subscriber}} = 1
+ \}
+\item 
+enum \mbox{\hyperlink{namespace_pub_sub_1_1_protocol_a017e6fd1c8f9739bdba9af1a76630f8e}{Response\+Status}} \{ \mbox{\hyperlink{namespace_pub_sub_1_1_protocol_a017e6fd1c8f9739bdba9af1a76630f8ea8155ab5101733e07664621f7d1403b66}{Success}} = 0, 
+\mbox{\hyperlink{namespace_pub_sub_1_1_protocol_a017e6fd1c8f9739bdba9af1a76630f8ea326cef63e436ede8cf63c64040a2ad80}{Error}} = 100
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Response for the handshake of publisher client \href{1_publisher-handshake-response.json}{\texttt{ implements Schema/1.\+1\+\_\+publisher-\/handshake-\/response.\+json}} 
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{namespace_pub_sub_1_1_protocol_a77aae1f3c1d8dddff0e5ad59a9bd34a4}\label{namespace_pub_sub_1_1_protocol_a77aae1f3c1d8dddff0e5ad59a9bd34a4}} 
+\index{PubSub::Protocol@{PubSub::Protocol}!ClientType@{ClientType}}
+\index{ClientType@{ClientType}!PubSub::Protocol@{PubSub::Protocol}}
+\doxysubsubsection{\texorpdfstring{ClientType}{ClientType}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespace_pub_sub_1_1_protocol_a35c6543a8ae383b425b3d4a3e7c758b3}{Pub\+Sub\+::\+Protocol\+::\+Client\+Type}} = typedef enum \mbox{\hyperlink{namespace_pub_sub_1_1_protocol_a35c6543a8ae383b425b3d4a3e7c758b3}{Client\+Type}}}
+
+\mbox{\Hypertarget{namespace_pub_sub_1_1_protocol_a9a60dadbd6c0f46b783e9174c1666b1e}\label{namespace_pub_sub_1_1_protocol_a9a60dadbd6c0f46b783e9174c1666b1e}} 
+\index{PubSub::Protocol@{PubSub::Protocol}!ResponseStatus@{ResponseStatus}}
+\index{ResponseStatus@{ResponseStatus}!PubSub::Protocol@{PubSub::Protocol}}
+\doxysubsubsection{\texorpdfstring{ResponseStatus}{ResponseStatus}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespace_pub_sub_1_1_protocol_a017e6fd1c8f9739bdba9af1a76630f8e}{Pub\+Sub\+::\+Protocol\+::\+Response\+Status}} = typedef enum \mbox{\hyperlink{namespace_pub_sub_1_1_protocol_a017e6fd1c8f9739bdba9af1a76630f8e}{Response\+Status}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{namespace_pub_sub_1_1_protocol_a35c6543a8ae383b425b3d4a3e7c758b3}\label{namespace_pub_sub_1_1_protocol_a35c6543a8ae383b425b3d4a3e7c758b3}} 
+\index{PubSub::Protocol@{PubSub::Protocol}!ClientType@{ClientType}}
+\index{ClientType@{ClientType}!PubSub::Protocol@{PubSub::Protocol}}
+\doxysubsubsection{\texorpdfstring{ClientType}{ClientType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_pub_sub_1_1_protocol_a35c6543a8ae383b425b3d4a3e7c758b3}{Pub\+Sub\+::\+Protocol\+::\+Client\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Publisher@{Publisher}!PubSub::Protocol@{PubSub::Protocol}}\index{PubSub::Protocol@{PubSub::Protocol}!Publisher@{Publisher}}}\mbox{\Hypertarget{namespace_pub_sub_1_1_protocol_a35c6543a8ae383b425b3d4a3e7c758b3a32c73be0cb175da278c8e2af0811b0d1}\label{namespace_pub_sub_1_1_protocol_a35c6543a8ae383b425b3d4a3e7c758b3a32c73be0cb175da278c8e2af0811b0d1}} 
+Publisher&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Subscriber@{Subscriber}!PubSub::Protocol@{PubSub::Protocol}}\index{PubSub::Protocol@{PubSub::Protocol}!Subscriber@{Subscriber}}}\mbox{\Hypertarget{namespace_pub_sub_1_1_protocol_a35c6543a8ae383b425b3d4a3e7c758b3a992c4a5b4628d8ebf671cf460254ee81}\label{namespace_pub_sub_1_1_protocol_a35c6543a8ae383b425b3d4a3e7c758b3a992c4a5b4628d8ebf671cf460254ee81}} 
+Subscriber&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespace_pub_sub_1_1_protocol_a017e6fd1c8f9739bdba9af1a76630f8e}\label{namespace_pub_sub_1_1_protocol_a017e6fd1c8f9739bdba9af1a76630f8e}} 
+\index{PubSub::Protocol@{PubSub::Protocol}!ResponseStatus@{ResponseStatus}}
+\index{ResponseStatus@{ResponseStatus}!PubSub::Protocol@{PubSub::Protocol}}
+\doxysubsubsection{\texorpdfstring{ResponseStatus}{ResponseStatus}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_pub_sub_1_1_protocol_a017e6fd1c8f9739bdba9af1a76630f8e}{Pub\+Sub\+::\+Protocol\+::\+Response\+Status}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Success@{Success}!PubSub::Protocol@{PubSub::Protocol}}\index{PubSub::Protocol@{PubSub::Protocol}!Success@{Success}}}\mbox{\Hypertarget{namespace_pub_sub_1_1_protocol_a017e6fd1c8f9739bdba9af1a76630f8ea8155ab5101733e07664621f7d1403b66}\label{namespace_pub_sub_1_1_protocol_a017e6fd1c8f9739bdba9af1a76630f8ea8155ab5101733e07664621f7d1403b66}} 
+Success&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Error@{Error}!PubSub::Protocol@{PubSub::Protocol}}\index{PubSub::Protocol@{PubSub::Protocol}!Error@{Error}}}\mbox{\Hypertarget{namespace_pub_sub_1_1_protocol_a017e6fd1c8f9739bdba9af1a76630f8ea326cef63e436ede8cf63c64040a2ad80}\label{namespace_pub_sub_1_1_protocol_a017e6fd1c8f9739bdba9af1a76630f8ea326cef63e436ede8cf63c64040a2ad80}} 
+Error&\\
+\hline
+
+\end{DoxyEnumFields}

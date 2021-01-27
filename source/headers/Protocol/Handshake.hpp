@@ -17,7 +17,7 @@ namespace PubSub
     {
         /**
         * @brief The handshake class wrapps the json object recived from the client, and creates simple ways to access the headers information.
-        * Implmenets /Schema/0_handshake.json
+        * <a href="0_handshake.json" target="_blank">implements /Schema/0_handshake.json</a>
         */
         class Handshake
         {
@@ -26,8 +26,8 @@ namespace PubSub
             Handshake(const char *raw);
 
             /**
-            * @brief Chek if the json object is valid.
-            * @returns boolean. true if the json contains all required keys, false otherwise.
+           * @brief Chek if the json object is valid.
+           *@returns boolean. true if the json contains all required keys, false otherwise.
             */
             bool validHeaders();
 
@@ -40,24 +40,24 @@ namespace PubSub
             T get(const char* headerName);
 
             /**
-            * Create a handshake class, and throw runtime error if the json is not validate. 
+           *Create a handshake class, and throw runtime error if the json is not validate. 
             */
             static Handshake createAndThrow(const std::string &json);
             static Handshake createAndThrow(const char *json);
 
         private:
-            Json json;
+            Json json; ///< The raw json object of the class.
             bool shouldEncrypt;
             ClientType clientType;
             std::string authenticationSecret;
             std::string encryptionString;
 
             /**
-            * @brief Set all default headers to their default values (if they do not exists in the json) 
+           * @brief Set all default headers to their default values (if they do not exists in the json) 
             */
             void setDefaultHeadersForJson();
             /**
-            * @brief Get all of the headers from the json into their variables. 
+           * @brief Get all of the headers from the json into their variables. 
             */
             void setHeadersFromJson();
         };

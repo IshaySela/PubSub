@@ -8,8 +8,8 @@
 namespace PubSub
 {
     /**
-    * @brief Response for the handshake of publisher client.
-    * Implements Schema/1.1_publisher-handshake-response.json
+    * @brief Response for the handshake of publisher client 
+    * <a href="1_publisher-handshake-response.json" target="_blank">implements Schema/1.1_publisher-handshake-response.json</a>
     */
     namespace Protocol
     {

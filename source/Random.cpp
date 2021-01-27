@@ -12,7 +12,7 @@ namespace PubSub
                 "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                 "abcdefghijklmnopqrstuvwxyz";
 
-            std::srand((unsigned)time(NULL) * getpid());
+            std::srand((unsigned)time(NULL)*getpid());
 
             tmp_s.reserve(len);
             for (int i = 0; i < len; ++i)

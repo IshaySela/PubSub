@@ -41,7 +41,7 @@ namespace PubSub
 
             do
             {
-                if (headers.length() > 1024 * 4)
+                if (headers.length() > 1024*4)
                     throw std::runtime_error("Max headers length execeeded.");
 
                 headers += Util::BioUtil::readSomeData(bio);

@@ -1,0 +1,11 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema",
+    "title": "The response for a handshake from a client of type subscriber.",
+    "properties": {
+        "Id": {
+            "type": "string",
+            "description": "The id of the subscriber."
+        }       
+    },
+    "required": ["Id"]
+}

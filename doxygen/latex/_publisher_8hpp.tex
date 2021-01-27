@@ -1,0 +1,24 @@
+\hypertarget{_publisher_8hpp}{}\doxysection{source/headers/\+Publisher.hpp File Reference}
+\label{_publisher_8hpp}\index{source/headers/Publisher.hpp@{source/headers/Publisher.hpp}}
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+{\ttfamily \#include $<$future$>$}\newline
+{\ttfamily \#include $<$atomic$>$}\newline
+{\ttfamily \#include \char`\"{}Util/\+Bio\+Types.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Tls\+Socket\+Server.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Subscriber.\+hpp\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_pub_sub_1_1_publisher}{Pub\+Sub\+::\+Publisher}}
+\begin{DoxyCompactList}\small\item\em The class publisher listens for data from the client and emits it to all of the subscribers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespace_pub_sub}{Pub\+Sub}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{namespace_pub_sub_a6fe4cc6449285096a65191eb7d573ade}{Pub\+Sub\+::\+Subscribers\+Map}} = std\+::unordered\+\_\+map$<$ std\+::string, std\+::unique\+\_\+ptr$<$ Subscriber $>$ $>$
+\end{DoxyCompactItemize}

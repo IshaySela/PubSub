@@ -1,0 +1,6 @@
+{
+    "$schema": "./2_publish-data.json",
+    "Length": 1024,
+    "DataType": "Binary",
+    "X-Client-Token": "123-435-645-982"
+}

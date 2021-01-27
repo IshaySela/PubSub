@@ -1,0 +1,34 @@
+\hypertarget{_tls_socket_server_8hpp}{}\doxysection{source/headers/\+Tls\+Socket\+Server.hpp File Reference}
+\label{_tls_socket_server_8hpp}\index{source/headers/TlsSocketServer.hpp@{source/headers/TlsSocketServer.hpp}}
+{\ttfamily \#include $<$openssl/ssl.\+h$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+{\ttfamily \#include $<$mutex$>$}\newline
+{\ttfamily \#include \char`\"{}Open\+Ssl\+Errors.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Unique\+Ptr\+Wrapper.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Publisher.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Util/\+Bio\+Types.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Protocol/\+Handshake.\+hpp\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_pub_sub_1_1_tls_socket_server}{Pub\+Sub\+::\+Tls\+Socket\+Server}}
+\begin{DoxyCompactList}\small\item\em Listen to incoming connections and sorts the clients to publishers and subscriber, according to the handshake the client sends. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespace_pub_sub}{Pub\+Sub}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_tls_socket_server_8hpp_af199a39319b90015d86f3c3ccccf42bc}{M\+A\+X\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+L\+E\+N\+G\+TH}}~1024$\ast$4
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_tls_socket_server_8hpp_af199a39319b90015d86f3c3ccccf42bc}\label{_tls_socket_server_8hpp_af199a39319b90015d86f3c3ccccf42bc}} 
+\index{TlsSocketServer.hpp@{TlsSocketServer.hpp}!MAX\_HEADER\_LENGTH@{MAX\_HEADER\_LENGTH}}
+\index{MAX\_HEADER\_LENGTH@{MAX\_HEADER\_LENGTH}!TlsSocketServer.hpp@{TlsSocketServer.hpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_HEADER\_LENGTH}{MAX\_HEADER\_LENGTH}}
+{\footnotesize\ttfamily \#define M\+A\+X\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+L\+E\+N\+G\+TH~1024$\ast$4}
+
