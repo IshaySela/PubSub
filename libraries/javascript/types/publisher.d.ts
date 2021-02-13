@@ -21,5 +21,5 @@ declare class Publisher {
      * @param request The request data.
      * @returns A promise that resolves when the handshake is done..
      */
-    public publish(request:PublishRequest): Promise<void>;
+    public publish(request:PublishRequest): Promise<HandshakeResponse>;
 }
