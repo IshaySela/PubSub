@@ -29,12 +29,29 @@ class Publisher {
                 this.socket.write(JSON.stringify(headers));
                 this.socket.write('\r\n\r\n')
                 
-                resolve()
+                this.socket.on('data', data => {
+                    // resolve the data to the user
+                    resolve(JSON.parse(data.toString('ascii')))
+                })
+
             });
 
         });
     }
-    
+
+    /**
+     * Publish the request to all of the subscribers.
+     * @param { PublishRequest } request 
+     */
+    publish(request) {
+        var headers = {
+            Length : request.data.length,
+            DataType: request.dataType
+        }
+
+        this.socket.write(JSON.stringify(headers))
+        this.socket.write('\r\n\r\n')
+    }
 
     get remoteIp() { return this._remoteIp; }
     get port() { return this._port; }

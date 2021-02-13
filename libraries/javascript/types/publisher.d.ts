@@ -2,7 +2,6 @@
 declare interface PublishRequest {
     data: string | Buffer | Uint8Array;
     dataType: string;
-    dataLength: number;
 }
 
 
