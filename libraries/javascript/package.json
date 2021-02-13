@@ -1,0 +1,12 @@
+{
+  "name": "web-observable-node",
+  "version": "1.0.0",
+  "description": "The web observable client in nodejs",
+  "main": "test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ishaisela@gmail.com",
+  "license": "ISC",
+  "types": "./types/definitions.d.ts"
+}
