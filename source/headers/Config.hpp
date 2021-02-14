@@ -20,6 +20,7 @@ namespace PubSub
          * 
          * @paragraph enviroment-list Enviroment List
          * @li @c PORT The port of the application.
+         * @li @c PUBLISHER_CLEAENER_TIMEOUT The timeout between every TlsSocketServer::publishersCleaner call.
         */
         static void useEnvironmentVariables();
         
