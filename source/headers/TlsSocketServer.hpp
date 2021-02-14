@@ -28,7 +28,7 @@ namespace PubSub
         ~TlsSocketServer();
 
         /**
-        * @brief Accepts clients, recive the handshake and handling the client accordingly.
+        * @brief Accepts clients, recive the handshake and handle the client accordingly.
         */
         void acceptClients();
         /**

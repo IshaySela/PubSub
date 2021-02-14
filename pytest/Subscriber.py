@@ -62,7 +62,7 @@ if __name__ == "__main__":
     id = str()
     
     with open('./sub-id.txt', 'r') as file:
-        id = file.read()
+        id = file.readline()
         
     def callback(data:bytes, index:int):
         command = data.decode()
