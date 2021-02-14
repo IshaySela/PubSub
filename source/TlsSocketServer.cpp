@@ -4,6 +4,7 @@
 #include "headers/Protocol/PublisherHandshakeResponse.hpp"
 #include "headers/Util/BioUtil.hpp"
 #include "headers/Protocol/SubscriberHandshakeResponse.hpp"
+#include "headers/Config.hpp"
 #include <openssl/ssl.h>
 #include <iostream>
 #include <sstream>
@@ -118,9 +119,10 @@ namespace PubSub
     {
         while (true)
         {
-            std::this_thread::sleep_for(std::chrono::seconds(10));
-            std::cout << __FILE__ << ":" << __LINE__ << "\t" << "Deleteting " << this->disconnectedPublishsers.size() << " from the publishers list." << std::endl;
-            
+            std::this_thread::sleep_for(std::chrono::seconds(Config::getDeadPublishersTimeout()));
+            std::cout << __FILE__ << ":" << __LINE__ << "\t"
+                      << "Deleteting " << this->disconnectedPublishsers.size() << " from the publishers list." << std::endl;
+
             std::lock_guard<std::mutex> lock(this->disconnectedPublishsersLock);
 
             for (auto publisherId : this->disconnectedPublishsers)

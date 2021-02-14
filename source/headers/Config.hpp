@@ -3,6 +3,8 @@
 
 #define ENV_NAME_PORT "PORT"
 #define DEFAULT_VALUE_PORT 8080
+#define ENV_NAME_PUBLISHER_CLEANER_TIMEOUT "PUBLISHER_CLEAENER_TIMEOUT"
+#define DEFAULT_VALUE_PUBLISHER_CLEANER_TIMEOUT 30
 
 namespace PubSub
 {
@@ -25,9 +27,16 @@ namespace PubSub
          * @brief Get the port for the application.
         */
         static int getPort();
+        
+        /**
+         * @brief The timeout between every TlsSocketServer::publishersCleaner call.
+        */
+        static int getDeadPublishersTimeout();
+
         ~Config();
     private:
         static int port;
+        static int deadPublishersTimeout;
     };
         
 }
