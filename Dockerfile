@@ -8,9 +8,8 @@ RUN apt-get update && \
 
 # Copy the project.
 COPY ./source ./source
+COPY ./.env ./.env
 
 RUN /usr/bin/g++ -g $(find ./source -type f -iregex '.*\.cpp') -o ./app -lssl -lcrypto -pthread
-
-EXPOSE 8080
 
 CMD [ "./app" ]

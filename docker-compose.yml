@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  pubsub:
+    env_file: 
+      - ./.env
+    
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    
+    ports: 
+      - "${PORT}:${PORT}"
+    
