@@ -8,7 +8,7 @@ declare interface PublishRequest {
 declare class Publisher {
     public get remoteIp(): string;
     public get port(): number;
-
+    public get id(): string | undefined
     constructor(remoteIp:string, port:number);
 
     /**

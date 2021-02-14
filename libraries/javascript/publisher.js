@@ -10,6 +10,7 @@ class Publisher {
     constructor(remoteIp, port) {
         this._remoteIp = remoteIp;
         this._port = port;
+        this._id = undefined;
     }
 
     /**
@@ -30,7 +31,10 @@ class Publisher {
                 this.socket.write('\r\n\r\n')
                 
                 this.socket.on('data', data => {
-                    resolve(JSON.parse(data.toString('ascii')))
+                    var response = JSON.parse(data.toString('ascii'))
+                    this._id = response.id;
+                    resolve()
+                    this.socket.on('data', data => {})
                 })
 
             });
@@ -59,6 +63,7 @@ class Publisher {
 
     get remoteIp() { return this._remoteIp; }
     get port() { return this._port; }
+    get id() { return this._id; }
 }
 
 module.exports = Publisher
