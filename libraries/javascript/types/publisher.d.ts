@@ -14,12 +14,12 @@ declare class Publisher {
     /**
      * Connect to the server and send the handshake data.
      */
-    public connect(): Promise<boolean>;
+    public connect(): Promise<HandshakeResponse>;
 
     /**
      * Publish a request to all of the subscribers.
      * @param request The request data.
      * @returns A promise that resolves when the handshake is done..
      */
-    public publish(request:PublishRequest): Promise<HandshakeResponse>;
+    public publish(request:PublishRequest): Promise<void>;
 }

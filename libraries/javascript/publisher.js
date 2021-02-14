@@ -14,7 +14,7 @@ class Publisher {
 
     /**
      * Connect to the server and send the handshake data.
-     * @returns { Promise<void> } A promise that indicates the status of handshake.
+     * @returns { Promise<HandshakeResponse> } A promise that indicates the status of handshake.
      */
     connect() {
         return new Promise((resolve, reject) => {
@@ -30,7 +30,6 @@ class Publisher {
                 this.socket.write('\r\n\r\n')
                 
                 this.socket.on('data', data => {
-                    // resolve the data to the user
                     resolve(JSON.parse(data.toString('ascii')))
                 })
 
@@ -41,16 +40,21 @@ class Publisher {
 
     /**
      * Publish the request to all of the subscribers.
-     * @param { PublishRequest } request 
+     * @param { PublishRequest } request
+     * @returns { Promise<void> }
      */
     publish(request) {
-        var headers = {
-            Length : request.data.length,
-            DataType: request.dataType
-        }
-
-        this.socket.write(JSON.stringify(headers))
-        this.socket.write('\r\n\r\n')
+        return new Promise((resolve, reject) => {
+            var headers = {
+                Length : request.data.length,
+                DataType: request.dataType
+            }
+    
+            this.socket.write(JSON.stringify(headers))
+            this.socket.write('\r\n\r\n')
+            this.socket.write(request.data)
+            resolve()
+        })
     }
 
     get remoteIp() { return this._remoteIp; }
